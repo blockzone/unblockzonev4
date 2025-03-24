@@ -295,6 +295,11 @@ body {
             if (titleElement) {
                 titleElement.style.textShadow = `0 0 15px rgba(${theme.lightColor || "255, 255, 255"}, 0.9)`;
             }
+
+            html {
+    scroll-behavior: smooth;
+}
+
             
             // Initialize particles
             particlesJS("particles-js", {
@@ -333,6 +338,9 @@ body {
             });
         });
     </script>
+
+    <div style="height: 100vh;"></div> <!-- Extra space for scrolling -->
+
     
     <!-- Include shared.js for Discord widget -->
     <script src="scripts/utilities/shared.js"></script>
