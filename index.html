@@ -1,6 +1,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -82,22 +83,21 @@ body {
             padding: 0;
             box-sizing: border-box;
         }
-body {
-    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROdNIejFmjeKC5u6Xq2yqOCa5y-uJseTCTfA&s') no-repeat center center fixed;
-    background-size: cover;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    color: white;
-    font-family: Arial, sans-serif;
-    opacity: 0;
-    animation: fadeIn 1s ease-in forwards;
-    position: relative;
-    overflow: auto;  /* This enables scrolling */
-}
-
+        body {
+            background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROdNIejFmjeKC5u6Xq2yqOCa5y-uJseTCTfA&s') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            flex-direction: column;
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+            position: relative;
+            overflow: hidden;
+        }
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
