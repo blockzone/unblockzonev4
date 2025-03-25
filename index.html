@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,8 +9,7 @@
     <!-- 100% privacy-first analytics -->
 <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 
-
-    <!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZN69N4SEF"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -74,7 +70,7 @@ body {
     left: 100%;
 }
 
-</style>
+    </style>
     
     <style>
         * {
@@ -229,6 +225,20 @@ body {
         function openSupportPage() {
             window.open('https://docs.google.com/forms/d/e/1FAIpQLScAjuO9s-lwojOfEMwf-_jtQOjWCzkrkz4NKGPCIpbED3k2rA/viewform', '_blank');
         }
+
+        // Scroll the page when the user scrolls down
+        let isUserScrolling = false;
+
+        window.addEventListener('scroll', () => {
+            if (!isUserScrolling) {
+                isUserScrolling = true;
+                // Scroll the page down by 500px after user scrolls
+                setTimeout(() => {
+                    window.scrollBy(0, 500);
+                    isUserScrolling = false;
+                }, 100);
+            }
+        });
     </script>
 </head>
 <body>
@@ -268,7 +278,6 @@ body {
 
     <!-- Discord Widget -->
     
-
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         // Initialize particles with theme colors
