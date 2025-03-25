@@ -78,133 +78,71 @@
 body {
     background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROdNIejFmjeKC5u6Xq2yqOCa5y-uJseTCTfA&s') no-repeat center center fixed;
     background-size: cover;
-    min-height: 200vh; /* Ensures the page is twice as long */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    min-height: 200vh; /* Makes the page twice as long */
     color: white;
     font-family: Arial, sans-serif;
-    flex-direction: column;
     opacity: 0;
     animation: fadeIn 1s ease-in forwards;
-    position: relative;
     overflow-y: auto; /* Allows scrolling */
 }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+/* Keep the title in place */
+.title {
+    position: fixed;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 48px;
+    font-weight: bold;
+    text-transform: lowercase;
+    color: white;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
 
-        .title {
-            position: absolute;
-            top: 25%;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 48px;
-            font-weight: bold;
-            text-transform: lowercase;
-            color: white;
-            text-align: center;
-            transition: transform 0.3s ease-in-out;
-            text-shadow: none;
-        }
+/* Keep the header (search bar) in place */
+.header {
+    position: fixed;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 60px;
+    background: black;
+    border: 2px solid white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+}
 
-        .title:hover {
-            transform: translateX(-50%) scale(1.1);
-        }
+/* Keep icons container in place */
+.icons-container {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    width: 100%;
+}
 
-        .header {
-            position: absolute;
-            top: 70%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80%;
-            height: 60px;
-            background: black;
-            border: 2px solid white;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            padding: 0 15px;
-        }
+/* Fix the glowing blob */
+.coolBlobIdk {
+    position: fixed;
+    bottom: -30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 400px;
+    background: linear-gradient(135deg, rgba(169, 169, 169, 0.5), rgba(255, 255, 255, 0.4));
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.8;
+    will-change: transform;
+}
 
-        .search-bar {
-            width: 100%;
-            background: transparent;
-            border: none;
-            outline: none;
-            color: white;
-            font-size: 18px;
-        }
-
-        .icons-container {
-            position: absolute;
-            top: 40%;
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            width: 100%;
-        }
-
-        .icon-container {
-            width: 100px;
-            height: 120px;
-            background: black;
-            border: 3px solid white;
-            border-radius: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            transform: translateZ(0);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            will-change: transform;
-        }
-
-        .icon-container:hover {
-            transform: scale(1.1) translateZ(0);
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-        }
-
-        .icon {
-            width: 60px;
-            height: 60px;
-            cursor: pointer;
-        }
-
-        .icon-label {
-            margin-top: 5px;
-            font-size: 14px;
-            color: white;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-        }
-
-        .support-text {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            font-size: 20px;
-            font-weight: bold;
-            color: white;
-            text-transform: lowercase;
-            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
-            cursor: pointer;
-        }
-
-        .coolBlobIdk {
-            position: fixed;
-            bottom: -30%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 600px;
-            height: 400px;
-            background: linear-gradient(135deg, rgba(169, 169, 169, 0.5), rgba(255, 255, 255, 0.4));
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.8;
-            will-change: transform;
-        }
 
         #particles-js {
             position: absolute;
