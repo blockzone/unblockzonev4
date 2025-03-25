@@ -343,6 +343,15 @@ body {
             });
         });
     </script>
+
+    <script>
+    window.onload = function() {
+        setTimeout(() => {
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        }, 1000); // Waits 1 second before scrolling
+    };
+</script>
+
     
     <!-- Include shared.js for Discord widget -->
     <script src="scripts/utilities/shared.js"></script>
