@@ -9,7 +9,7 @@
     <!-- 100% privacy-first analytics -->
 <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 
-<!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZN69N4SEF"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -24,7 +24,7 @@
 <script src="scripts/utilities/emergency-escape.js"></script>
 <script src="scripts/utilities/theme.js"></script>
 <script src="scripts/utilities/message-system.js"></script>
-    
+
     <style>
 /* Moving gradient background */
 @keyframes moveGradient {
@@ -37,6 +37,10 @@ body {
     background: linear-gradient(-45deg, #0f0f0f, #1a1a1a, #000000, #222222);
     background-size: 400% 400%;
     animation: moveGradient 20s infinite alternate ease-in-out;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto; /* Make the page scrollable */
 }
 
 /* Icon container for smooth shine effect */
@@ -75,28 +79,18 @@ body {
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROdNIejFmjeKC5u6Xq2yqOCa5y-uJseTCTfA&s') no-repeat center center fixed;
             background-size: cover;
-            height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             color: white;
             font-family: Arial, sans-serif;
-            flex-direction: column;
-            opacity: 0;
-            animation: fadeIn 1s ease-in forwards;
             position: relative;
             overflow: hidden;
         }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
         .title {
             position: absolute;
             top: 25%; /* Adjusted to be right above the icons */
@@ -129,7 +123,6 @@ body {
             align-items: center;
             padding: 0 15px;
         }
-
         .search-bar {
             width: 100%;
             background: transparent;
@@ -139,14 +132,13 @@ body {
             font-size: 18px;
         }
 
-        /* New Rectangle Styles */
         .rectangle-container {
             display: flex;
             gap: 20px;
             margin-top: 40px;
             justify-content: center;
-            flex-wrap: wrap;
-            padding: 20px;
+            margin-bottom: 20px;
+            width: 100%;
         }
 
         .rectangle {
@@ -160,11 +152,9 @@ body {
             cursor: pointer;
             transition: transform 0.3s ease-in-out;
         }
-
         .rectangle:hover {
             transform: scale(1.05);
         }
-
         .rectangle img {
             width: 100%;
             height: 100%;
@@ -172,11 +162,9 @@ body {
             object-fit: cover;
             transition: filter 0.3s ease-in-out;
         }
-
         .rectangle:hover img {
             filter: blur(5px) brightness(0.5);
         }
-
         .game-name {
             position: absolute;
             top: 20px;
@@ -190,9 +178,46 @@ body {
             letter-spacing: -0.5px;
             text-transform: lowercase;
         }
-
         .rectangle:hover .game-name {
             opacity: 1;
+        }
+
+        .icons-container {
+            position: absolute;
+            top: 40%;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            width: 100%;
+        }
+        .icon-container {
+            width: 100px;
+            height: 120px;
+            background: black;
+            border: 3px solid white;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transform: translateZ(0);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            will-change: transform;
+        }
+        .icon-container:hover {
+            transform: scale(1.1) translateZ(0);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        }
+        .icon {
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+        }
+        .icon-label {
+            margin-top: 5px;
+            font-size: 14px;
+            color: white;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
         }
 
         .support-text {
@@ -230,7 +255,7 @@ body {
             z-index: -1;
         }
     </style>
-    
+
     <script>
         function handleSearch(event) {
             if (event.key === "Enter") {
@@ -253,12 +278,35 @@ body {
 
     <div class="title">unblockzone v4</div>
 
+    <div class="icons-container">
+        <div class="icon-container">
+            <img class="icon" src="https://static-00.iconduck.com/assets.00/console-controller-icon-2048x2048-pmmusn7m.png" onclick="window.location.href='g.html'">
+            <div class="icon-label">games</div>
+        </div>
+        <div class="icon-container">
+            <img class="icon" src="https://img.icons8.com/ios7/600/FFFFFF/apple-app-store--v2.png" onclick="window.location.href='a.html'">
+            <div class="icon-label">apps</div>
+        </div>
+        <div class="icon-container">
+            <img class="icon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0_6HUhLshuftA_sDchc5pEGqTBPa41EO6Xw&s" onclick="window.location.href='e.html'">
+            <div class="icon-label">exploits</div>
+        </div>
+        <div class="icon-container">
+            <img class="icon" src="https://static-00.iconduck.com/assets.00/film-spool-icon-2048x2048-uk9kbgtd.png" onclick="window.location.href='m.html'">
+            <div class="icon-label">movies</div>
+        </div>
+        <div class="icon-container">
+            <img class="icon" src="https://img.icons8.com/m_rounded/512/FFFFFF/settings.png" onclick="window.location.href='s.html'">
+            <div class="icon-label">settings</div>
+        </div>
+    </div>
+
     <div class="header">
         <input type="text" class="search-bar" placeholder="search..." onkeydown="handleSearch(event)">
     </div>
 
+    <!-- Add rectangle container below search bar -->
     <div class="rectangle-container">
-        <!-- Example Rectangles -->
         <div class="rectangle">
             <img src="https://via.placeholder.com/400x250" alt="Game Image">
             <div class="game-name">Game 1</div>
@@ -277,15 +325,19 @@ body {
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        // Initialize particles with theme colors
         document.addEventListener('DOMContentLoaded', function() {
             const theme = window.getCurrentTheme ? window.getCurrentTheme() : {
                 particleColor: "#ffffff",
                 particleLinks: "#ffffff",
                 lightColor: "255, 255, 255"
             };
-
-            // Initialize particles
+            
+            const blobElement = document.querySelector('.coolBlobIdk');
+            if (blobElement) {
+                blobElement.style.background = `linear-gradient(135deg, rgba(${theme.lightColor || "255, 255, 255"}, 0.8), rgba(${theme.lightColor || "255, 255, 255"}, 0.6))`;
+                blobElement.style.boxShadow = `0 0 120px rgba(${theme.lightColor || "255, 255, 255"}, 0.5)`;
+            }
+            
             particlesJS("particles-js", {
                 "particles": {
                     "number": { "value": 20, "density": { "enable": false } },
@@ -321,15 +373,6 @@ body {
                 "retina_detect": false
             });
         });
-    </script>
-
-    <script src="scripts/utilities/shared.js"></script>
-    
-    <script>
-        // Show a welcome message on homepage
-        setTimeout(function() {
-            showGlowingMessage('welcome to unblockzone! take a look around...');
-        }, 1500);
     </script>
 </body>
 </html>
