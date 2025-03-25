@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,228 +7,234 @@
     <link rel="icon" href="https://files.catbox.moe/ao6qv3.png" type="image/png">
 
     <!-- 100% privacy-first analytics -->
-<script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+    <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZN69N4SEF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZN69N4SEF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'G-SZN69N4SEF');
-</script>
+      gtag('config', 'G-SZN69N4SEF');
+    </script>
 
-<!-- Tab Cloaking and Emergency Escape Scripts -->
-<script src="scripts/utilities/tab-cloak.js"></script>
-<script src="scripts/utilities/emergency-escape.js"></script>
-<script src="scripts/utilities/theme.js"></script>
-<script src="scripts/utilities/message-system.js"></script>
+    <!-- Tab Cloaking and Emergency Escape Scripts -->
+    <script src="scripts/utilities/tab-cloak.js"></script>
+    <script src="scripts/utilities/emergency-escape.js"></script>
+    <script src="scripts/utilities/theme.js"></script>
+    <script src="scripts/utilities/message-system.js"></script>
     
     <style>
-/* Moving gradient background */
-@keyframes moveGradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
+    /* Moving gradient background */
+    @keyframes moveGradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
 
-body {
-    background: linear-gradient(-45deg, #0f0f0f, #1a1a1a, #000000, #222222);
-    background-size: 400% 400%;
-    animation: moveGradient 20s infinite alternate ease-in-out;
-}
+    body {
+        background: linear-gradient(-45deg, #0f0f0f, #1a1a1a, #000000, #222222);
+        background-size: 400% 400%;
+        animation: moveGradient 20s infinite alternate ease-in-out;
+    }
 
-/* Icon container for smooth shine effect */
-.icon-container {
-    position: relative;
-    overflow: hidden;
-    border-radius: 20px; /* Keeps the shine effect within rounded edges */
-    transition: transform 0.3s ease-in-out;
-}
+    /* Icon container for smooth shine effect */
+    .icon-container {
+        position: relative;
+        overflow: hidden;
+        border-radius: 20px;
+        transition: transform 0.3s ease-in-out;
+    }
 
-.icon-container:hover {
-    transform: scale(1.1); /* Slight zoom effect for smooth interaction */
-}
+    .icon-container:hover {
+        transform: scale(1.1);
+    }
 
-/* Clean, smooth shine effect */
-.icon-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -150%;
-    width: 200%;
-    height: 100%;
-    background: linear-gradient(120deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.1) 100%);
-    filter: blur(8px);
-    transform: skewX(-25deg);
-    transition: left 0.8s ease-in-out;
-}
+    .icon-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -150%;
+        width: 200%;
+        height: 100%;
+        background: linear-gradient(120deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.1) 100%);
+        filter: blur(8px);
+        transform: skewX(-25deg);
+        transition: left 0.8s ease-in-out;
+    }
 
-/* Shine effect moves smoothly on hover */
-.icon-container:hover::before {
-    left: 100%;
-}
+    .icon-container:hover::before {
+        left: 100%;
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-        body {
-            background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROdNIejFmjeKC5u6Xq2yqOCa5y-uJseTCTfA&s') no-repeat center center fixed;
-            background-size: cover;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-family: Arial, sans-serif;
-            flex-direction: column;
-            opacity: 0;
-            animation: fadeIn 1s ease-in forwards;
-            position: relative;
-            overflow: hidden;
-        }
+    body {
+        background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROdNIejFmjeKC5u6Xq2yqOCa5y-uJseTCTfA&s') no-repeat center center fixed;
+        background-size: cover;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-family: Arial, sans-serif;
+        flex-direction: column;
+        opacity: 0;
+        animation: fadeIn 1s ease-in forwards;
+        position: relative;
+        overflow: hidden;
+    }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
 
-        .title {
-            position: absolute;
-            top: 25%; /* Adjusted to be right above the icons */
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 48px;
-            font-weight: bold;
-            text-transform: lowercase;
-            color: white;
-            text-align: center;
-            transition: transform 0.3s ease-in-out;
-            text-shadow: none; /* Removed the glowing text effect */
-        }
+    .title {
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 48px;
+        font-weight: bold;
+        text-transform: lowercase;
+        color: white;
+        text-align: center;
+        transition: transform 0.3s ease-in-out;
+        text-shadow: none;
+    }
 
-        .title:hover {
-            transform: translateX(-50%) scale(1.1);
-        }
+    .title:hover {
+        transform: translateX(-50%) scale(1.1);
+    }
 
-        .header {
-            position: absolute;
-            top: 70%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80%;
-            height: 60px;
-            background: black;
-            border: 2px solid white;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            padding: 0 15px;
-        }
+    .header {
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        height: 60px;
+        background: black;
+        border: 2px solid white;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        padding: 0 15px;
+    }
 
-        .search-bar {
-            width: 100%;
-            background: transparent;
-            border: none;
-            outline: none;
-            color: white;
-            font-size: 18px;
-        }
+    .search-bar {
+        width: 100%;
+        background: transparent;
+        border: none;
+        outline: none;
+        color: white;
+        font-size: 18px;
+    }
 
-        /* New Rectangle Styles */
-        .rectangle-container {
-            display: flex;
-            gap: 20px;
-            margin-top: 40px;
-            justify-content: center;
-            flex-wrap: wrap;
-            padding: 20px;
-        }
+    /* Wrapper for both first and second pages */
+    .content-wrapper {
+        overflow-y: scroll;
+        height: 100vh;
+        width: 100%;
+        padding: 20px;
+    }
 
-        .rectangle {
-            width: 400px;
-            height: 250px;
-            background-color: black;
-            border-radius: 15px;
-            box-shadow: 0 0 20px white;
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.3s ease-in-out;
-        }
+    /* New Rectangle Styles */
+    .rectangle-container {
+        display: flex;
+        gap: 20px;
+        margin-top: 40px;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 20px;
+    }
 
-        .rectangle:hover {
-            transform: scale(1.05);
-        }
+    .rectangle {
+        width: 400px;
+        height: 250px;
+        background-color: black;
+        border-radius: 15px;
+        box-shadow: 0 0 20px white;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+    }
 
-        .rectangle img {
-            width: 100%;
-            height: 100%;
-            border-radius: 15px;
-            object-fit: cover;
-            transition: filter 0.3s ease-in-out;
-        }
+    .rectangle:hover {
+        transform: scale(1.05);
+    }
 
-        .rectangle:hover img {
-            filter: blur(5px) brightness(0.5);
-        }
+    .rectangle img {
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+        object-fit: cover;
+        transition: filter 0.3s ease-in-out;
+    }
 
-        .game-name {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            font-size: 24px;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-            color: white;
-            text-align: left;
-            font-weight: bold;
-            letter-spacing: -0.5px;
-            text-transform: lowercase;
-        }
+    .rectangle:hover img {
+        filter: blur(5px) brightness(0.5);
+    }
 
-        .rectangle:hover .game-name {
-            opacity: 1;
-        }
+    .game-name {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 24px;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        color: white;
+        text-align: left;
+        font-weight: bold;
+        letter-spacing: -0.5px;
+        text-transform: lowercase;
+    }
 
-        .support-text {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            font-size: 20px;
-            font-weight: bold;
-            color: white;
-            text-transform: lowercase;
-            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
-            cursor: pointer;
-        }
+    .rectangle:hover .game-name {
+        opacity: 1;
+    }
 
-        .coolBlobIdk {
-            position: fixed;
-            bottom: -30%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 600px;
-            height: 400px;
-            background: linear-gradient(135deg, rgba(169, 169, 169, 0.5), rgba(255, 255, 255, 0.4));
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.8;
-            will-change: transform;
-        }
+    .support-text {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        text-transform: lowercase;
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+        cursor: pointer;
+    }
 
-        #particles-js {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
+    .coolBlobIdk {
+        position: fixed;
+        bottom: -30%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 600px;
+        height: 400px;
+        background: linear-gradient(135deg, rgba(169, 169, 169, 0.5), rgba(255, 255, 255, 0.4));
+        border-radius: 50%;
+        filter: blur(80px);
+        opacity: 0.8;
+        will-change: transform;
+    }
+
+    #particles-js {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
     </style>
     
     <script>
@@ -258,23 +263,26 @@ body {
         <input type="text" class="search-bar" placeholder="search..." onkeydown="handleSearch(event)">
     </div>
 
-    <div class="rectangle-container">
-        <!-- Example Rectangles -->
-        <div class="rectangle">
-            <img src="https://via.placeholder.com/400x250" alt="Game Image">
-            <div class="game-name">Game 1</div>
+    <div class="content-wrapper">
+        <!-- First page content (above the rectangle) -->
+        <div class="rectangle-container">
+            <div class="rectangle">
+                <img src="https://via.placeholder.com/400x250" alt="Game Image">
+                <div class="game-name">Game 1</div>
+            </div>
+            <div class="rectangle">
+                <img src="https://via.placeholder.com/400x250" alt="Game Image">
+                <div class="game-name">Game 2</div>
+            </div>
+            <div class="rectangle">
+                <img src="https://via.placeholder.com/400x250" alt="Game Image">
+                <div class="game-name">Game 3</div>
+            </div>
         </div>
-        <div class="rectangle">
-            <img src="https://via.placeholder.com/400x250" alt="Game Image">
-            <div class="game-name">Game 2</div>
-        </div>
-        <div class="rectangle">
-            <img src="https://via.placeholder.com/400x250" alt="Game Image">
-            <div class="game-name">Game 3</div>
-        </div>
-    </div>
 
-    <div class="support-text" onclick="openSupportPage()">support</div>
+        <!-- Second page content (appears when you scroll) -->
+        <div class="support-text" onclick="openSupportPage()">support</div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
