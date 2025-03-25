@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,8 +9,7 @@
     <!-- 100% privacy-first analytics -->
 <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 
-
-    <!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZN69N4SEF"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -42,7 +39,7 @@ body {
     animation: moveGradient 20s infinite alternate ease-in-out;
 }
 
-        html {
+html {
     scroll-behavior: smooth;
     height: 100%;
 }
@@ -85,161 +82,169 @@ body {
 }
 
 </style>
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROdNIejFmjeKC5u6Xq2yqOCa5y-uJseTCTfA&s') no-repeat center center fixed;
-            background-size: cover;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-family: Arial, sans-serif;
-            flex-direction: column;
-            opacity: 0;
-            animation: fadeIn 1s ease-in forwards;
-            position: relative;
-            overflow: hidden;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-.title {
-    position: absolute;
-    top: 25%; /* Adjusted to be right above the icons */
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 48px;
-    font-weight: bold;
-    text-transform: lowercase;
-    color: white;
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
-    text-shadow: none; /* Removed the glowing text effect */
-}
 
-.title:hover {
-    transform: translateX(-50%) scale(1.1);
-}
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROdNIejFmjeKC5u6Xq2yqOCa5y-uJseTCTfA&s') no-repeat center center fixed;
+        background-size: cover;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-family: Arial, sans-serif;
+        flex-direction: column;
+        opacity: 0;
+        animation: fadeIn 1s ease-in forwards;
+        position: relative;
+        overflow: hidden;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
 
-        .header {
-            position: absolute;
-            top: 70%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80%;
-            height: 60px;
-            background: black;
-            border: 2px solid white;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            padding: 0 15px;
-        }
-        .search-bar {
-            width: 100%;
-            background: transparent;
-            border: none;
-            outline: none;
-            color: white;
-            font-size: 18px;
-        }
-        .icons-container {
-            position: absolute;
-            top: 40%;
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            width: 100%;
-        }
-        .icon-container {
-            width: 100px;
-            height: 120px;
-            background: black;
-            border: 3px solid white;
-            border-radius: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            transform: translateZ(0);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            will-change: transform;
-        }
-        .icon-container:hover {
-            transform: scale(1.1) translateZ(0);
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-        }
-        .icon {
-            width: 60px;
-            height: 60px;
-            cursor: pointer;
-        }
-        .icon-label {
-            margin-top: 5px;
-            font-size: 14px;
-            color: white;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-        }
+    .title {
+        position: absolute;
+        top: 25%; /* Adjusted to be right above the icons */
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 48px;
+        font-weight: bold;
+        text-transform: lowercase;
+        color: white;
+        text-align: center;
+        transition: transform 0.3s ease-in-out;
+        text-shadow: none; /* Removed the glowing text effect */
+    }
 
-        .support-text {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            font-size: 20px;
-            font-weight: bold;
-            color: white;
-            text-transform: lowercase;
-            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
-            cursor: pointer;
-        }
+    .title:hover {
+        transform: translateX(-50%) scale(1.1);
+    }
 
-        .coolBlobIdk {
-            position: fixed;
-            bottom: -30%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 600px;
-            height: 400px;
-            background: linear-gradient(135deg, rgba(169, 169, 169, 0.5), rgba(255, 255, 255, 0.4));
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.8;
-            will-change: transform;
-        }
+    .header {
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        height: 60px;
+        background: black;
+        border: 2px solid white;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        padding: 0 15px;
+    }
 
-        #particles-js {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-    </style>
-    
-    <script>
-        function handleSearch(event) {
-            if (event.key === "Enter") {
-                let query = event.target.value.trim();
-                if (query) {
-                    let proxyUrl = `active/iframe.html#https://bing.com/search?q=${encodeURIComponent(query)}`;
-                    window.location.href = proxyUrl;
-                }
+    .search-bar {
+        width: 100%;
+        background: transparent;
+        border: none;
+        outline: none;
+        color: white;
+        font-size: 18px;
+    }
+
+    .icons-container {
+        position: absolute;
+        top: 40%;
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        width: 100%;
+    }
+
+    .icon-container {
+        width: 100px;
+        height: 120px;
+        background: black;
+        border: 3px solid white;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateZ(0);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        will-change: transform;
+    }
+
+    .icon-container:hover {
+        transform: scale(1.1) translateZ(0);
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    }
+
+    .icon {
+        width: 60px;
+        height: 60px;
+        cursor: pointer;
+    }
+
+    .icon-label {
+        margin-top: 5px;
+        font-size: 14px;
+        color: white;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    }
+
+    .support-text {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        text-transform: lowercase;
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+        cursor: pointer;
+    }
+
+    .coolBlobIdk {
+        position: fixed;
+        bottom: -30%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 600px;
+        height: 400px;
+        background: linear-gradient(135deg, rgba(169, 169, 169, 0.5), rgba(255, 255, 255, 0.4));
+        border-radius: 50%;
+        filter: blur(80px);
+        opacity: 0.8;
+        will-change: transform;
+    }
+
+    #particles-js {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+</style>
+
+<script>
+    function handleSearch(event) {
+        if (event.key === "Enter") {
+            let query = event.target.value.trim();
+            if (query) {
+                let proxyUrl = `active/iframe.html#https://bing.com/search?q=${encodeURIComponent(query)}`;
+                window.location.href = proxyUrl;
             }
         }
+    }
 
-        function openSupportPage() {
-            window.open('https://docs.google.com/forms/d/e/1FAIpQLScAjuO9s-lwojOfEMwf-_jtQOjWCzkrkz4NKGPCIpbED3k2rA/viewform', '_blank');
-        }
-    </script>
+    function openSupportPage() {
+        window.open('https://docs.google.com/forms/d/e/1FAIpQLScAjuO9s-lwojOfEMwf-_jtQOjWCzkrkz4NKGPCIpbED3k2rA/viewform', '_blank');
+    }
+</script>
+
 </head>
 <body>
     <div id="particles-js"></div>
@@ -276,17 +281,14 @@ body {
 
     <div class="support-text" onclick="openSupportPage()">support</div>
 
-    <div style="height: 100vh; background-color: #ff6f61;"></div>
-<div style="height: 100vh; background-color: #6fa3ff;"></div>
-<div style="height: 100vh; background-color: #6f61ff;"></div>
-<div style="height: 100vh; background-color: #61ff61;"></div>
-<div style="height: 100vh; background-color: #f5e600;"></div>
+    <!-- More content to increase scrolling -->
+    <div style="height: 120vh; background-color: #ff6f61;"></div>
+    <div style="height: 120vh; background-color: #6fa3ff;"></div>
+    <div style="height: 120vh; background-color: #6f61ff;"></div>
+    <div style="height: 120vh; background-color: #61ff61;"></div>
+    <div style="height: 120vh; background-color: #f5e600;"></div>
 
-
-    <!-- Discord Widget -->
-    
-
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         // Initialize particles with theme colors
         document.addEventListener('DOMContentLoaded', function() {
@@ -351,26 +353,6 @@ body {
             });
         });
     </script>
-
-<script>
-    window.addEventListener('wheel', function(event) {
-        if (event.deltaY > 0) { // Scroll down
-            window.scrollBy({
-                top: window.innerHeight, // Scroll by one screen height
-                behavior: 'smooth'       // Smooth scrolling
-            });
-        } else if (event.deltaY < 0) { // Scroll up
-            window.scrollBy({
-                top: -window.innerHeight, // Scroll up by one screen height
-                behavior: 'smooth'        // Smooth scrolling
-            });
-        }
-    });
-</script>
-
-
-
-
     
     <!-- Include shared.js for Discord widget -->
     <script src="scripts/utilities/shared.js"></script>
@@ -381,5 +363,6 @@ body {
             showGlowingMessage('welcome to unblockzone! take a look around... warning: the proxy shows up in your history, im working on a tab cloaker for it.');
         }, 1500);
     </script>
+
 </body>
 </html>
