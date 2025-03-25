@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,8 +9,7 @@
     <!-- 100% privacy-first analytics -->
 <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 
-
-    <!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZN69N4SEF"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -73,14 +70,12 @@ body {
     left: 100%;
 }
 
-</style>
-    
-    <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
             background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROdNIejFmjeKC5u6Xq2yqOCa5y-uJseTCTfA&s') no-repeat center center fixed;
             background-size: cover;
@@ -96,27 +91,29 @@ body {
             position: relative;
             overflow: hidden;
         }
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-.title {
-    position: absolute;
-    top: 25%; /* Adjusted to be right above the icons */
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 48px;
-    font-weight: bold;
-    text-transform: lowercase;
-    color: white;
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
-    text-shadow: none; /* Removed the glowing text effect */
-}
 
-.title:hover {
-    transform: translateX(-50%) scale(1.1);
-}
+        .title {
+            position: absolute;
+            top: 25%; /* Adjusted to be right above the icons */
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 48px;
+            font-weight: bold;
+            text-transform: lowercase;
+            color: white;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+            text-shadow: none; /* Removed the glowing text effect */
+        }
+
+        .title:hover {
+            transform: translateX(-50%) scale(1.1);
+        }
 
         .header {
             position: absolute;
@@ -132,6 +129,7 @@ body {
             align-items: center;
             padding: 0 15px;
         }
+
         .search-bar {
             width: 100%;
             background: transparent;
@@ -140,42 +138,61 @@ body {
             color: white;
             font-size: 18px;
         }
-        .icons-container {
-            position: absolute;
-            top: 40%;
+
+        /* New Rectangle Styles */
+        .rectangle-container {
             display: flex;
+            gap: 20px;
+            margin-top: 40px;
             justify-content: center;
-            gap: 25px;
-            width: 100%;
+            flex-wrap: wrap;
+            padding: 20px;
         }
-        .icon-container {
-            width: 100px;
-            height: 120px;
-            background: black;
-            border: 3px solid white;
-            border-radius: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            transform: translateZ(0);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            will-change: transform;
-        }
-        .icon-container:hover {
-            transform: scale(1.1) translateZ(0);
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-        }
-        .icon {
-            width: 60px;
-            height: 60px;
+
+        .rectangle {
+            width: 400px;
+            height: 250px;
+            background-color: black;
+            border-radius: 15px;
+            box-shadow: 0 0 20px white;
+            position: relative;
+            overflow: hidden;
             cursor: pointer;
+            transition: transform 0.3s ease-in-out;
         }
-        .icon-label {
-            margin-top: 5px;
-            font-size: 14px;
+
+        .rectangle:hover {
+            transform: scale(1.05);
+        }
+
+        .rectangle img {
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            object-fit: cover;
+            transition: filter 0.3s ease-in-out;
+        }
+
+        .rectangle:hover img {
+            filter: blur(5px) brightness(0.5);
+        }
+
+        .game-name {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
             color: white;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            text-align: left;
+            font-weight: bold;
+            letter-spacing: -0.5px;
+            text-transform: lowercase;
+        }
+
+        .rectangle:hover .game-name {
+            opacity: 1;
         }
 
         .support-text {
@@ -236,37 +253,27 @@ body {
 
     <div class="title">unblockzone v4</div>
 
-    <div class="icons-container">
-        <div class="icon-container">
-            <img class="icon" src="https://static-00.iconduck.com/assets.00/console-controller-icon-2048x2048-pmmusn7m.png" onclick="window.location.href='g.html'">
-            <div class="icon-label">games</div>
-        </div>
-        <div class="icon-container">
-            <img class="icon" src="https://img.icons8.com/ios7/600/FFFFFF/apple-app-store--v2.png" onclick="window.location.href='a.html'">
-            <div class="icon-label">apps</div>
-        </div>
-        <div class="icon-container">
-            <img class="icon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0_6HUhLshuftA_sDchc5pEGqTBPa41EO6Xw&s" onclick="window.location.href='e.html'">
-            <div class="icon-label">exploits</div>
-        </div>
-        <div class="icon-container">
-            <img class="icon" src="https://static-00.iconduck.com/assets.00/film-spool-icon-2048x2048-uk9kbgtd.png" onclick="window.location.href='m.html'">
-            <div class="icon-label">movies</div>
-        </div>
-        <div class="icon-container">
-            <img class="icon" src="https://img.icons8.com/m_rounded/512/FFFFFF/settings.png" onclick="window.location.href='s.html'">
-            <div class="icon-label">settings</div>
-        </div>
-    </div>
-
     <div class="header">
         <input type="text" class="search-bar" placeholder="search..." onkeydown="handleSearch(event)">
     </div>
 
-    <div class="support-text" onclick="openSupportPage()">support</div>
+    <div class="rectangle-container">
+        <!-- Example Rectangles -->
+        <div class="rectangle">
+            <img src="https://via.placeholder.com/400x250" alt="Game Image">
+            <div class="game-name">Game 1</div>
+        </div>
+        <div class="rectangle">
+            <img src="https://via.placeholder.com/400x250" alt="Game Image">
+            <div class="game-name">Game 2</div>
+        </div>
+        <div class="rectangle">
+            <img src="https://via.placeholder.com/400x250" alt="Game Image">
+            <div class="game-name">Game 3</div>
+        </div>
+    </div>
 
-    <!-- Discord Widget -->
-    
+    <div class="support-text" onclick="openSupportPage()">support</div>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
@@ -277,25 +284,7 @@ body {
                 particleLinks: "#ffffff",
                 lightColor: "255, 255, 255"
             };
-            
-            // Update the blob light effect
-            const blobElement = document.querySelector('.coolBlobIdk');
-            if (blobElement) {
-                blobElement.style.background = `linear-gradient(135deg, rgba(${theme.lightColor || "255, 255, 255"}, 0.8), rgba(${theme.lightColor || "255, 255, 255"}, 0.6))`;
-                blobElement.style.boxShadow = `0 0 120px rgba(${theme.lightColor || "255, 255, 255"}, 0.5)`;
-            }
-            
-            // Apply theme to other elements
-            const rectangles = document.querySelectorAll('.rectangle');
-            rectangles.forEach(rectangle => {
-                rectangle.style.boxShadow = `0 0 20px rgba(${theme.lightColor || "255, 255, 255"}, 0.7)`;
-            });
-            
-            const titleElement = document.querySelector('.title');
-            if (titleElement) {
-                titleElement.style.textShadow = `0 0 15px rgba(${theme.lightColor || "255, 255, 255"}, 0.9)`;
-            }
-            
+
             // Initialize particles
             particlesJS("particles-js", {
                 "particles": {
@@ -333,14 +322,13 @@ body {
             });
         });
     </script>
-    
-    <!-- Include shared.js for Discord widget -->
+
     <script src="scripts/utilities/shared.js"></script>
     
     <script>
         // Show a welcome message on homepage
         setTimeout(function() {
-            showGlowingMessage('welcome to unblockzone! take a look around... warning: the proxy shows up in your history, im working on a tab cloaker for it.');
+            showGlowingMessage('welcome to unblockzone! take a look around...');
         }, 1500);
     </script>
 </body>
