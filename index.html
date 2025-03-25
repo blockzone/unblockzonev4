@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,98 +6,48 @@
     <title>unblockzone v4</title>
     <link rel="icon" href="https://files.catbox.moe/ao6qv3.png" type="image/png">
 
-    <!-- 100% privacy-first analytics -->
-    <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
-
-    <!-- Google tag (gtag.js) -->
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZN69N4SEF"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-SZN69N4SEF');
     </script>
 
-    <!-- Tab Cloaking and Emergency Escape Scripts -->
-    <script src="scripts/utilities/tab-cloak.js"></script>
-    <script src="scripts/utilities/emergency-escape.js"></script>
-    <script src="scripts/utilities/theme.js"></script>
-    <script src="scripts/utilities/message-system.js"></script>
-    
     <style>
-        /* Moving gradient background */
-        @keyframes moveGradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        /* Smooth scrolling effect */
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
             background: linear-gradient(-45deg, #0f0f0f, #1a1a1a, #000000, #222222);
             background-size: 400% 400%;
             animation: moveGradient 20s infinite alternate ease-in-out;
-            height: 200%; /* This makes the height of the page 2x longer */
-            overflow-y: auto; /* Allows scrolling */
-        }
-
-        /* Icon container for smooth shine effect */
-        .icon-container {
-            position: relative;
-            overflow: hidden;
-            border-radius: 20px;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .icon-container:hover {
-            transform: scale(1.1);
-        }
-
-        .icon-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -150%;
-            width: 200%;
-            height: 100%;
-            background: linear-gradient(120deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.1) 100%);
-            filter: blur(8px);
-            transform: skewX(-25deg);
-            transition: left 0.8s ease-in-out;
-        }
-
-        .icon-container:hover::before {
-            left: 100%;
-        }
-
-        * {
+            height: 200vh; /* Ensures the page is twice as long */
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-body {
-    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROdNIejFmjeKC5u6Xq2yqOCa5y-uJseTCTfA&s') no-repeat center center fixed;
-    background-size: cover;
-    min-height: 200vh; /* Ensures the page is twice as long */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-family: Arial, sans-serif;
-    flex-direction: column;
-    opacity: 0;
-    animation: fadeIn 1s ease-in forwards;
-    position: relative;
-    overflow-y: auto; /* Allows scrolling */
-}
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
         }
 
+        /* Parallax effect on scroll */
+        .scroll-container {
+            position: relative;
+            width: 100%;
+            text-align: center;
+            transition: transform 0.3s ease-out;
+        }
+
+        /* Fixed UI elements */
         .title {
-            position: absolute;
+            position: fixed;
             top: 25%;
             left: 50%;
             transform: translateX(-50%);
@@ -108,15 +57,10 @@ body {
             color: white;
             text-align: center;
             transition: transform 0.3s ease-in-out;
-            text-shadow: none;
-        }
-
-        .title:hover {
-            transform: translateX(-50%) scale(1.1);
         }
 
         .header {
-            position: absolute;
+            position: fixed;
             top: 70%;
             left: 50%;
             transform: translateX(-50%);
@@ -130,6 +74,18 @@ body {
             padding: 0 15px;
         }
 
+        .icons-container {
+            position: fixed;
+            top: 40%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            width: 100%;
+        }
+
+        /* Search bar */
         .search-bar {
             width: 100%;
             background: transparent;
@@ -139,15 +95,29 @@ body {
             font-size: 18px;
         }
 
-        .icons-container {
-            position: absolute;
-            top: 40%;
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            width: 100%;
+        /* Floating glowing effect */
+        .coolBlobIdk {
+            position: fixed;
+            bottom: -30%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 400px;
+            background: linear-gradient(135deg, rgba(169, 169, 169, 0.5), rgba(255, 255, 255, 0.4));
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.8;
+            will-change: transform;
         }
 
+        /* Scroll indicator effect */
+        @keyframes moveGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Smooth scaling icons */
         .icon-container {
             width: 100px;
             height: 120px;
@@ -158,13 +128,11 @@ body {
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            transform: translateZ(0);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
-            will-change: transform;
         }
 
         .icon-container:hover {
-            transform: scale(1.1) translateZ(0);
+            transform: scale(1.1);
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
         }
 
@@ -181,6 +149,7 @@ body {
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
         }
 
+        /* Support text */
         .support-text {
             position: absolute;
             bottom: 20px;
@@ -192,32 +161,28 @@ body {
             text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
             cursor: pointer;
         }
-
-        .coolBlobIdk {
-            position: fixed;
-            bottom: -30%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 600px;
-            height: 400px;
-            background: linear-gradient(135deg, rgba(169, 169, 169, 0.5), rgba(255, 255, 255, 0.4));
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.8;
-            will-change: transform;
-        }
-
-        #particles-js {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
     </style>
-    
+
     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let lastScrollY = window.scrollY;
+            
+            window.addEventListener("scroll", () => {
+                let currentScrollY = window.scrollY;
+                let scrollContainer = document.querySelector(".scroll-container");
+
+                if (currentScrollY > lastScrollY) {
+                    // Scrolling down, move content up
+                    scrollContainer.style.transform = `translateY(-${currentScrollY / 3}px)`;
+                } else {
+                    // Scrolling up, move content down
+                    scrollContainer.style.transform = `translateY(${currentScrollY / 3}px)`;
+                }
+
+                lastScrollY = currentScrollY;
+            });
+        });
+
         function handleSearch(event) {
             if (event.key === "Enter") {
                 let query = event.target.value.trim();
@@ -231,26 +196,10 @@ body {
         function openSupportPage() {
             window.open('https://docs.google.com/forms/d/e/1FAIpQLScAjuO9s-lwojOfEMwf-_jtQOjWCzkrkz4NKGPCIpbED3k2rA/viewform', '_blank');
         }
-
-        // Scroll the page when the user scrolls down
-        let isUserScrolling = false;
-
-        window.addEventListener('scroll', () => {
-            if (!isUserScrolling) {
-                isUserScrolling = true;
-                // Scroll the page down by 500px after user scrolls
-                setTimeout(() => {
-                    window.scrollBy(0, 500);
-                    isUserScrolling = false;
-                }, 100);
-            }
-        });
     </script>
 </head>
 <body>
-    <div id="particles-js"></div>
     <div class="coolBlobIdk"></div>
-
     <div class="title">unblockzone v4</div>
 
     <div class="icons-container">
@@ -262,18 +211,6 @@ body {
             <img class="icon" src="https://img.icons8.com/ios7/600/FFFFFF/apple-app-store--v2.png" onclick="window.location.href='a.html'">
             <div class="icon-label">apps</div>
         </div>
-        <div class="icon-container">
-            <img class="icon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0_6HUhLshuftA_sDchc5pEGqTBPa41EO6Xw&s" onclick="window.location.href='e.html'">
-            <div class="icon-label">exploits</div>
-        </div>
-        <div class="icon-container">
-            <img class="icon" src="https://static-00.iconduck.com/assets.00/film-spool-icon-2048x2048-uk9kbgtd.png" onclick="window.location.href='m.html'">
-            <div class="icon-label">movies</div>
-        </div>
-        <div class="icon-container">
-            <img class="icon" src="https://img.icons8.com/m_rounded/512/FFFFFF/settings.png" onclick="window.location.href='s.html'">
-            <div class="icon-label">settings</div>
-        </div>
     </div>
 
     <div class="header">
@@ -282,70 +219,8 @@ body {
 
     <div class="support-text" onclick="openSupportPage()">support</div>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script>
-        // Initialize particles with theme colors
-        document.addEventListener('DOMContentLoaded', function() {
-            const theme = window.getCurrentTheme ? window.getCurrentTheme() : {
-                particleColor: "#ffffff",
-                particleLinks: "#ffffff",
-                lightColor: "255, 255, 255"
-            };
-
-            // Update the blob light effect
-            const blobElement = document.querySelector('.coolBlobIdk');
-            if (blobElement) {
-                blobElement.style.background = `linear-gradient(135deg, rgba(${theme.lightColor || "255, 255, 255"}, 0.8), rgba(${theme.lightColor || "255, 255, 255"}, 0.6))`;
-                blobElement.style.boxShadow = `0 0 120px rgba(${theme.lightColor || "255, 255, 255"}, 0.5)`;
-            }
-
-            // Apply theme to other elements
-            const rectangles = document.querySelectorAll('.rectangle');
-            rectangles.forEach(rectangle => {
-                rectangle.style.boxShadow = `0 0 20px rgba(${theme.lightColor || "255, 255, 255"}, 0.7)`;
-            });
-
-            const titleElement = document.querySelector('.title');
-            if (titleElement) {
-                titleElement.style.textShadow = `0 0 15px rgba(${theme.lightColor || "255, 255, 255"}, 0.9)`;
-            }
-
-            // Initialize particles
-            particlesJS("particles-js", {
-                "particles": {
-                    "number": { "value": 20, "density": { "enable": false } },
-                    "color": { "value": theme.particleColor || "#ffffff" },
-                    "shape": { "type": "circle" },
-                    "opacity": { "value": 0.7, "random": true },
-                    "size": { "value": 3, "random": true },
-                    "line_linked": {
-                        "enable": true,
-                        "distance": 150,
-                        "color": theme.particleLinks || "#ffffff",
-                        "opacity": 0.6,
-                        "width": 1
-                    },
-                    "move": { 
-                        "enable": true, 
-                        "speed": 2, 
-                        "direction": "none",
-                        "random": true,
-                        "straight": false,
-                        "out_mode": "out",
-                        "bounce": false
-                    }
-                },
-                "interactivity": {
-                    "detect_on": "canvas",
-                    "events": { 
-                        "onhover": { "enable": false },
-                        "onclick": { "enable": false },
-                        "resize": true 
-                    }
-                },
-                "retina_detect": false
-            });
-        });
-    </script>
+    <div class="scroll-container">
+        <p style="margin-top: 120vh; font-size: 24px; color: white;">More content here...</p>
+    </div>
 </body>
 </html>
