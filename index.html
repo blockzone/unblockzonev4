@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -83,7 +84,7 @@ body {
         body {
             background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROdNIejFmjeKC5u6Xq2yqOCa5y-uJseTCTfA&s') no-repeat center center fixed;
             background-size: cover;
-            height: 200vh;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -99,13 +100,6 @@ body {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-
-            /* Smooth scrolling effect */
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
-    
 .title {
     position: absolute;
     top: 25%; /* Adjusted to be right above the icons */
@@ -271,10 +265,6 @@ body {
 
     <div class="support-text" onclick="openSupportPage()">support</div>
 
-      <div class="content">
-    <h1>Scroll Down with Mouse</h1>
-  </div>
-
     <!-- Discord Widget -->
     
 
@@ -343,18 +333,6 @@ body {
             });
         });
     </script>
-
-    
-  <script>
-    // Ensure smooth scrolling is active when mouse wheel is used
-    window.addEventListener('wheel', function(event) {
-      if (event.deltaY > 0) {
-        window.scrollBy(0, 100); // Scroll 100px down
-      } else {
-        window.scrollBy(0, -100); // Scroll 100px up
-      }
-    });
-  </script>
     
     <!-- Include shared.js for Discord widget -->
     <script src="scripts/utilities/shared.js"></script>
@@ -367,4 +345,3 @@ body {
     </script>
 </body>
 </html>
-
