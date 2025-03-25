@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +8,6 @@
 
     <!-- 100% privacy-first analytics -->
 <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
-
 
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZN69N4SEF"></script>
@@ -28,8 +24,8 @@
 <script src="scripts/utilities/emergency-escape.js"></script>
 <script src="scripts/utilities/theme.js"></script>
 <script src="scripts/utilities/message-system.js"></script>
-    
-    <style>
+
+<style>
 /* Moving gradient background */
 @keyframes moveGradient {
     0% { background-position: 0% 50%; }
@@ -43,7 +39,7 @@ body {
     animation: moveGradient 20s infinite alternate ease-in-out;
 }
 
-        html {
+html {
     scroll-behavior: smooth;
     height: 100%;
 }
@@ -52,69 +48,12 @@ body {
     height: auto;
     min-height: 100vh;
     overflow-y: auto;
+    padding-bottom: 50px; /* Optional padding for smoother scroll */
 }
 
-/* Icon container for smooth shine effect */
-.icon-container {
-    position: relative;
-    overflow: hidden;
-    border-radius: 20px; /* Keeps the shine effect within rounded edges */
-    transition: transform 0.3s ease-in-out;
-}
-
-.icon-container:hover {
-    transform: scale(1.1); /* Slight zoom effect for smooth interaction */
-}
-
-/* Clean, smooth shine effect */
-.icon-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -150%;
-    width: 200%;
-    height: 100%;
-    background: linear-gradient(120deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.1) 100%);
-    filter: blur(8px);
-    transform: skewX(-25deg);
-    transition: left 0.8s ease-in-out;
-}
-
-/* Shine effect moves smoothly on hover */
-.icon-container:hover::before {
-    left: 100%;
-}
-
-</style>
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROdNIejFmjeKC5u6Xq2yqOCa5y-uJseTCTfA&s') no-repeat center center fixed;
-            background-size: cover;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-family: Arial, sans-serif;
-            flex-direction: column;
-            opacity: 0;
-            animation: fadeIn 1s ease-in forwards;
-            position: relative;
-            overflow: hidden;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
 .title {
     position: absolute;
-    top: 25%; /* Adjusted to be right above the icons */
+    top: 25%;
     left: 50%;
     transform: translateX(-50%);
     font-size: 48px;
@@ -122,117 +61,110 @@ body {
     text-transform: lowercase;
     color: white;
     text-align: center;
-    transition: transform 0.3s ease-in-out;
-    text-shadow: none; /* Removed the glowing text effect */
 }
 
-.title:hover {
-    transform: translateX(-50%) scale(1.1);
+.header {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 60px;
+    background: black;
+    border: 2px solid white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
 }
 
-        .header {
-            position: absolute;
-            top: 70%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80%;
-            height: 60px;
-            background: black;
-            border: 2px solid white;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            padding: 0 15px;
-        }
-        .search-bar {
-            width: 100%;
-            background: transparent;
-            border: none;
-            outline: none;
-            color: white;
-            font-size: 18px;
-        }
-        .icons-container {
-            position: absolute;
-            top: 40%;
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            width: 100%;
-        }
-        .icon-container {
-            width: 100px;
-            height: 120px;
-            background: black;
-            border: 3px solid white;
-            border-radius: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            transform: translateZ(0);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            will-change: transform;
-        }
-        .icon-container:hover {
-            transform: scale(1.1) translateZ(0);
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-        }
-        .icon {
-            width: 60px;
-            height: 60px;
-            cursor: pointer;
-        }
-        .icon-label {
-            margin-top: 5px;
-            font-size: 14px;
-            color: white;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-        }
+.search-bar {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 18px;
+}
 
-        .coolBlobIdk {
-            position: fixed;
-            bottom: -30%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 600px;
-            height: 400px;
-            background: linear-gradient(135deg, rgba(169, 169, 169, 0.5), rgba(255, 255, 255, 0.4));
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.8;
-            will-change: transform;
-        }
+.icons-container {
+    position: absolute;
+    top: 40%;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    width: 100%;
+}
 
-        #particles-js {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-    </style>
-    
-    <script>
-        function handleSearch(event) {
-            if (event.key === "Enter") {
-                let query = event.target.value.trim();
-                if (query) {
-                    let proxyUrl = `active/iframe.html#https://bing.com/search?q=${encodeURIComponent(query)}`;
-                    window.location.href = proxyUrl;
-                }
+.icon-container {
+    width: 100px;
+    height: 120px;
+    background: black;
+    border: 3px solid white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.icon-container:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.icon-label {
+    margin-top: 5px;
+    font-size: 14px;
+    color: white;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Additional section style for scrollable content */
+.content-section {
+    height: 100vh;
+    background-color: #ff6f61;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+}
+
+.content-section:nth-child(even) {
+    background-color: #6fa3ff;
+}
+
+.content-section:nth-child(odd) {
+    background-color: #6f61ff;
+}
+
+</style>
+
+<script>
+    function handleSearch(event) {
+        if (event.key === "Enter") {
+            let query = event.target.value.trim();
+            if (query) {
+                let proxyUrl = `active/iframe.html#https://bing.com/search?q=${encodeURIComponent(query)}`;
+                window.location.href = proxyUrl;
             }
         }
+    }
 
-        function openSupportPage() {
-            window.open('https://docs.google.com/forms/d/e/1FAIpQLScAjuO9s-lwojOfEMwf-_jtQOjWCzkrkz4NKGPCIpbED3k2rA/viewform', '_blank');
-        }
-    </script>
+    function openSupportPage() {
+        window.open('https://docs.google.com/forms/d/e/1FAIpQLScAjuO9s-lwojOfEMwf-_jtQOjWCzkrkz4NKGPCIpbED3k2rA/viewform', '_blank');
+    }
+</script>
 </head>
 <body>
-    <div id="particles-js"></div>
-    <div class="coolBlobIdk"></div>
 
     <div class="title">unblockzone v4</div>
 
@@ -263,110 +195,21 @@ body {
         <input type="text" class="search-bar" placeholder="search..." onkeydown="handleSearch(event)">
     </div>
 
-    <div style="height: 100vh; background-color: #ff6f61;"></div>
-<div style="height: 100vh; background-color: #6fa3ff;"></div>
-<div style="height: 100vh; background-color: #6f61ff;"></div>
-<div style="height: 100vh; background-color: #61ff61;"></div>
-<div style="height: 100vh; background-color: #f5e600;"></div>
+    <!-- Scrollable sections -->
+    <div class="content-section">
+        Section 1: Scroll down for more content.
+    </div>
+    <div class="content-section">
+        Section 2: More content here.
+    </div>
+    <div class="content-section">
+        Section 3: Additional content below.
+    </div>
+    <div class="content-section">
+        Section 4: Keep scrolling!
+    </div>
 
-
-    <!-- Discord Widget -->
+    <!-- Add more sections as needed -->
     
-
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script>
-        // Initialize particles with theme colors
-        document.addEventListener('DOMContentLoaded', function() {
-            const theme = window.getCurrentTheme ? window.getCurrentTheme() : {
-                particleColor: "#ffffff",
-                particleLinks: "#ffffff",
-                lightColor: "255, 255, 255"
-            };
-            
-            // Update the blob light effect
-            const blobElement = document.querySelector('.coolBlobIdk');
-            if (blobElement) {
-                blobElement.style.background = `linear-gradient(135deg, rgba(${theme.lightColor || "255, 255, 255"}, 0.8), rgba(${theme.lightColor || "255, 255, 255"}, 0.6))`;
-                blobElement.style.boxShadow = `0 0 120px rgba(${theme.lightColor || "255, 255, 255"}, 0.5)`;
-            }
-            
-            // Apply theme to other elements
-            const rectangles = document.querySelectorAll('.rectangle');
-            rectangles.forEach(rectangle => {
-                rectangle.style.boxShadow = `0 0 20px rgba(${theme.lightColor || "255, 255, 255"}, 0.7)`;
-            });
-            
-            const titleElement = document.querySelector('.title');
-            if (titleElement) {
-                titleElement.style.textShadow = `0 0 15px rgba(${theme.lightColor || "255, 255, 255"}, 0.9)`;
-            }
-            
-            // Initialize particles
-            particlesJS("particles-js", {
-                "particles": {
-                    "number": { "value": 20, "density": { "enable": false } },
-                    "color": { "value": theme.particleColor || "#ffffff" },
-                    "shape": { "type": "circle" },
-                    "opacity": { "value": 0.7, "random": true },
-                    "size": { "value": 3, "random": true },
-                    "line_linked": {
-                        "enable": true,
-                        "distance": 150,
-                        "color": theme.particleLinks || "#ffffff",
-                        "opacity": 0.6,
-                        "width": 1
-                    },
-                    "move": { 
-                        "enable": true, 
-                        "speed": 2, 
-                        "direction": "none",
-                        "random": true,
-                        "straight": false,
-                        "out_mode": "out",
-                        "bounce": false
-                    }
-                },
-                "interactivity": {
-                    "detect_on": "canvas",
-                    "events": { 
-                        "onhover": { "enable": false },
-                        "onclick": { "enable": false },
-                        "resize": true 
-                    }
-                },
-                "retina_detect": false
-            });
-        });
-    </script>
-
-<script>
-    window.addEventListener('wheel', function(event) {
-        if (event.deltaY > 0) { // Scroll down
-            window.scrollBy({
-                top: window.innerHeight, // Scroll by one screen height
-                behavior: 'smooth'       // Smooth scrolling
-            });
-        } else if (event.deltaY < 0) { // Scroll up
-            window.scrollBy({
-                top: -window.innerHeight, // Scroll up by one screen height
-                behavior: 'smooth'        // Smooth scrolling
-            });
-        }
-    });
-</script>
-
-
-
-
-    
-    <!-- Include shared.js for Discord widget -->
-    <script src="scripts/utilities/shared.js"></script>
-    
-    <script>
-        // Show a welcome message on homepage
-        setTimeout(function() {
-            showGlowingMessage('welcome to unblockzone! take a look around... warning: the proxy shows up in your history, im working on a tab cloaker for it.');
-        }, 1500);
-    </script>
 </body>
 </html>
