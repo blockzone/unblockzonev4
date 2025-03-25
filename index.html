@@ -75,21 +75,22 @@
             padding: 0;
             box-sizing: border-box;
         }
-        body {
-            background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROdNIejFmjeKC5u6Xq2yqOCa5y-uJseTCTfA&s') no-repeat center center fixed;
-            background-size: cover;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-family: Arial, sans-serif;
-            flex-direction: column;
-            opacity: 0;
-            animation: fadeIn 1s ease-in forwards;
-            position: relative;
-            overflow: hidden;
-        }
+body {
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROdNIejFmjeKC5u6Xq2yqOCa5y-uJseTCTfA&s') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 200vh; /* Ensures the page is twice as long */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: Arial, sans-serif;
+    flex-direction: column;
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+    position: relative;
+    overflow-y: auto; /* Allows scrolling */
+}
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
