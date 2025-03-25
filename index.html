@@ -149,8 +149,7 @@ body {
         .rectangle-container-two {
             display: flex;
             gap: 20px;
-            position: absolute;
-            margin-top: 200vh;
+            margin-top: 40px; /* Adjusted to have some space after the search bar */
             justify-content: center;
             flex-wrap: wrap;
             padding: 20px;
@@ -257,12 +256,13 @@ body {
     <div id="particles-js"></div>
     <div class="coolBlobIdk"></div>
 
-    <div class="title">Unblockzone v4</div>
+    <div class="title">unblockzone v4</div>
 
     <div class="header">
         <input type="text" class="search-bar" placeholder="search..." onkeydown="handleSearch(event)">
     </div>
 
+    <!-- Moved the rectangle containers here -->
     <div class="rectangle-container">
         <div class="rectangle">
             <img src="https://via.placeholder.com/400x250" alt="Game Image">
@@ -328,7 +328,6 @@ body {
             <div class="game-name">Game 13</div>
         </div>
     </div>
-
 
     <div class="support-text" onclick="openSupportPage()">support</div>
 
