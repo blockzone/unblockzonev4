@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -149,7 +150,8 @@ body {
         .rectangle-container-two {
             display: flex;
             gap: 20px;
-            margin-top: 40px; /* Adjusted to have some space after the search bar */
+            position: absolute;
+            margin-top: 200vh;
             justify-content: center;
             flex-wrap: wrap;
             padding: 20px;
@@ -262,7 +264,6 @@ body {
         <input type="text" class="search-bar" placeholder="search..." onkeydown="handleSearch(event)">
     </div>
 
-    <!-- Moved the rectangle containers here -->
     <div class="rectangle-container">
         <div class="rectangle">
             <img src="https://via.placeholder.com/400x250" alt="Game Image">
@@ -291,45 +292,9 @@ body {
             <img src="https://via.placeholder.com/400x250" alt="Game Image">
             <div class="game-name">Game 3</div>
         </div>
-        <div class="rectangle">
-            <img src="https://via.placeholder.com/400x250" alt="Game Image">
-            <div class="game-name">Game 4</div>
-        </div>
-        <div class="rectangle">
-            <img src="https://via.placeholder.com/400x250" alt="Game Image">
-            <div class="game-name">Game 5</div>
-        </div>
-        <div class="rectangle">
-            <img src="https://via.placeholder.com/400x250" alt="Game Image">
-            <div class="game-name">Game 6</div>
-        </div>
-        <div class="rectangle">
-            <img src="https://via.placeholder.com/400x250" alt="Game Image">
-            <div class="game-name">Game 7</div>
-        </div>
-        <div class="rectangle">
-            <img src="https://via.placeholder.com/400x250" alt="Game Image">
-            <div class="game-name">Game 8</div>
-        </div>
-        <div class="rectangle">
-            <img src="https://via.placeholder.com/400x250" alt="Game Image">
-            <div class="game-name">Game 10</div>
-        </div>
-        <div class="rectangle">
-            <img src="https://via.placeholder.com/400x250" alt="Game Image">
-            <div class="game-name">Game 11</div>
-        </div>
-        <div class="rectangle">
-            <img src="https://via.placeholder.com/400x250" alt="Game Image">
-            <div class="game-name">Game 12</div>
-        </div>
-        <div class="rectangle">
-            <img src="https://via.placeholder.com/400x250" alt="Game Image">
-            <div class="game-name">Game 13</div>
-        </div>
-    </div>
+     </div>
 
-    <div class="support-text" onclick="openSupportPage()">support</div>
+      <div class="support-text" onclick="openSupportPage()">support</div>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
