@@ -599,6 +599,38 @@ body {
     </div>
 </div>
 
+    <script>
+    document.getElementById("triggerImage").addEventListener("click", function() {
+        let popup = document.getElementById("popup");
+        popup.style.display = "flex";
+
+        // Play sound
+        let sound = document.getElementById("correctSound");
+        sound.play();
+
+        // Close the popup when clicking outside the image
+        popup.addEventListener("click", function(event) {
+            if (event.target === popup) {
+                popup.style.display = "none";
+            }
+        });
+    });
+
+    function showClosePopup() {
+        let closePopup = document.getElementById("closePopup");
+        closePopup.style.display = "block";
+        closePopup.style.opacity = "1";
+
+        setTimeout(() => {
+            closePopup.style.opacity = "0";
+            setTimeout(() => {
+                closePopup.style.display = "none";
+            }, 1000);
+        }, 1000);
+    }
+</script>
+
+
 
  <div class="particles" style->
 
