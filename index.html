@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>unblockzone v4</title>
     <link rel="icon" href="https://files.catbox.moe/ao6qv3.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
 
     <!-- 100% privacy-first analytics -->
 <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
@@ -301,6 +303,84 @@ body {
             opacity: 0.8;
             will-change: transform;
         }
+
+        /* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Media query for iPad devices */
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+    /* Adjust layout for iPad (portrait and landscape) */
+    body {
+        background-color: #e0e0e0; /* Light grey background for iPad */
+    }
+
+    .main-content {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    /* Adjust specific element sizes, margins, etc. */
+    h1 {
+        font-size: 2em;
+        text-align: center;
+    }
+
+    .game-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    /* If needed, adjust images or icons to fit the iPad screen */
+    .game-thumbnail img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Portrait iPad specifically (max height 1024px, min height 768px) */
+@media only screen and (max-height: 1024px) and (min-height: 768px) {
+    body {
+        background-color: #dcdcdc; /* Different color for portrait mode */
+    }
+
+    .main-content {
+        width: 90%;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+        padding-bottom: 10px;
+    }
+
+    .game-thumbnail {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Optional: Landscape iPad specific styles (max height 768px) */
+@media only screen and (max-width: 768px) {
+    body {
+        background-color: #cccccc; /* Background color change in landscape */
+    }
+
+    .main-content {
+        width: 70%;
+    }
+
+    .game-thumbnail img {
+        width: 100%;
+        height: auto;
+    }
+}
+
 
 #particles-js {
     position: fixed; /* Keeps it in place even when scrolling */
