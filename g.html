@@ -255,12 +255,20 @@
     font-family: Arial, sans-serif;
     font-size: 16px;
     text-align: center;
-    box-shadow: 0 0 10px white; /* Simple white glow effect */
+    box-shadow: 0 0 0 transparent; /* Initial no glow */
+    transition: box-shadow 0.3s ease-in-out; /* Smooth transition for the glow */
 }
 
 .rainbow-search::placeholder {
     color: rgba(255, 255, 255, 0.7);
 }
+
+/* Fade in glow on hover */
+.rainbow-search:hover,
+.rainbow-search:focus {
+    box-shadow: 0 0 15px white; /* White glow when hovered or focused */
+}
+
 
 /* Optional: Glow effect when the search bar is focused */
 .rainbow-search:focus {
