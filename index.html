@@ -257,6 +257,40 @@ body {
     }
 }
 
+                .fake-ad {
+            width: 300px;
+            padding: 15px;
+            border: 1px solid #dfe1e5;
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            text-align: left;
+            font-family: Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        .fake-ad:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .ad-url {
+            color: #34a853;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+
+        .ad-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #1a0dab;
+            margin-bottom: 5px;
+        }
+
+        .ad-description {
+            font-size: 14px;
+            color: #4d5156;
+        }
+
 /* Media query for mobile phones (max-width: 767px) */
 @media only screen and (max-width: 767px) {
     /* For smaller screens, fit the page to the device width */
@@ -629,6 +663,12 @@ body {
         }, 1000);
     }
 </script>
+
+        <div class="fake-ad" onclick="window.location.href='https://www.youtube.com/watch?v=tZQkpxgXSGg'">
+        <div class="ad-url">Ad · www.google.com</div>
+        <div class="ad-title">Best Free Online Tool - 2024 Update</div>
+        <div class="ad-description">Try this amazing free tool now. Save time, work smarter. Click here to start!</div>
+    </div>
 
 
 
