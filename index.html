@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -172,23 +173,14 @@ body {
             padding: 0 15px;
         }
 
-.search-bar {
-    width: 100%;
-    background: transparent;
-    border: none;
-    outline: none;
-    color: white;
-    font-size: 18px;
-    position: relative;
-}
-
-.search-bar::placeholder {
-    position: absolute;
-    opacity: 0; /* Start with the placeholder invisible */
-    transition: opacity 1s ease;
-    font-size: 18px;
-    color: white;
-}
+        .search-bar {
+            width: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: white;
+            font-size: 18px;
+        }
 
         /* Base styles */
 body {
@@ -501,51 +493,6 @@ body {
         height: auto;
     }
 }
-        const phrases = [
-    "one of the best games sites!",
-    "unblockzone on top",
-    "try making a better site junior",
-    "new games every week!",
-    "mr lowell is the BEST teacher",
-    "search the web...",
-    "looking for something fun?",
-    "try our game collection",
-    "brayden made this site...",
-    "welcome to unblockzone!"
-];
-
-let currentPhraseIndex = 0;
-const searchBar = document.getElementById('search-bar');
-
-// Function to change placeholder text with fading effect
-function changePlaceholder() {
-    searchBar.placeholder = phrases[currentPhraseIndex];
-    
-    // Fade out the placeholder before changing the text
-    searchBar.classList.add('fading');
-    
-    setTimeout(() => {
-        currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length; // Cycle through the phrases
-        searchBar.classList.remove('fading'); // Reset the fade class after changing text
-    }, 1000); // Duration of fade-out
-}
-
-// Initial call to set placeholder text
-changePlaceholder();
-
-// Set interval to change the placeholder every 5 seconds
-setInterval(changePlaceholder, 5000);
-
-// Add fading effect to placeholder
-searchBar.addEventListener('animationend', () => {
-    searchBar.style.opacity = 1; // Reset opacity after animation
-});
-
-    .search-bar.fading::placeholder {
-    opacity: 0; /* Fade out */
-    transition: opacity 1s ease; /* Duration of fade-out */
-}
-
 
 
 #particles-js {
@@ -605,10 +552,9 @@ searchBar.addEventListener('animationend', () => {
         </div>
     </div>
 
-<div class="header">
-    <input type="text" id="search-bar" class="search-bar" placeholder="search..." onkeydown="handleSearch(event)">
-</div>
-
+    <div class="header">
+        <input type="text" class="search-bar" placeholder="search..." onkeydown="handleSearch(event)">
+    </div>
 
 <div class="rectangle-container">
     <div class="rectangle" onclick="window.open('/g/subway-surfers.html', '_blank')">
