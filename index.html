@@ -196,50 +196,71 @@ body {
 }
 
 
-        .rectangle {
-            width: 400px;
-            height: 250px;
-            background-color: black;
-            border-radius: 15px;
-            box-shadow: 0 0 20px white;
-            position: relative;
-            cursor: pointer;
-            transition: transform 0.3s ease-in-out;
-        }
+.rectangle {
+    width: 400px;
+    height: 250px;
+    background-color: black;
+    border-radius: 15px;
+    box-shadow: 0 0 20px white;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+}
 
-        .rectangle:hover {
-            transform: scale(1.05);
-        }
+.rectangle:hover {
+    transform: scale(1.05);
+}
 
-        .rectangle img {
-            width: 100%;
-            height: 100%;
-            border-radius: 15px;
-            object-fit: cover;
-            transition: filter 0.3s ease-in-out;
-        }
+/* Static Image (Default) */
+.static-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out;
+}
 
-        .rectangle:hover img {
-            filter: blur(5px) brightness(0.5);
-        }
+/* GIF Image (Initially Hidden) */
+.gif-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
 
-        .game-name {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            font-size: 24px;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-            color: white;
-            text-align: left;
-            font-weight: bold;
-            letter-spacing: -0.5px;
-            text-transform: lowercase;
-        }
+/* Show GIF on Hover & Hide Static Image */
+.rectangle:hover .gif-image {
+    opacity: 1;
+}
 
-        .rectangle:hover .game-name {
-            opacity: 1;
-        }
+.rectangle:hover .static-image {
+    opacity: 0;
+}
+
+/* Game Name Fade-In Effect */
+.game-name {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+    text-transform: lowercase;
+}
+
+.rectangle:hover .game-name {
+    opacity: 1;
+}
 
         .coolBlobIdk {
             position: fixed;
@@ -316,30 +337,36 @@ body {
 
 <div class="rectangle-container">
     <div class="rectangle" onclick="window.open('https://example.com/game1', '_blank')">
-        <img src="https://via.placeholder.com/400x250" alt="Game Image">
+        <img class="static-image" src="https://via.placeholder.com/400x250" alt="Game Image">
+        <img class="gif-image" src="https://media.giphy.com/media/JU7l5gRERaKlLDeTns/giphy.gif" alt="Game GIF">
         <div class="game-name">Game 1</div>
     </div>
     <div class="rectangle" onclick="window.open('https://example.com/game2', '_blank')">
-        <img src="https://via.placeholder.com/400x250" alt="Game Image">
+        <img class="static-image" src="https://via.placeholder.com/400x250" alt="Game Image">
+        <img class="gif-image" src="https://media.giphy.com/media/JU7l5gRERaKlLDeTns/giphy.gif" alt="Game GIF">
         <div class="game-name">Game 2</div>
     </div>
     <div class="rectangle" onclick="window.open('https://example.com/game3', '_blank')">
-        <img src="https://via.placeholder.com/400x250" alt="Game Image">
+        <img class="static-image" src="https://via.placeholder.com/400x250" alt="Game Image">
+        <img class="gif-image" src="https://media.giphy.com/media/JU7l5gRERaKlLDeTns/giphy.gif" alt="Game GIF">
         <div class="game-name">Game 3</div>
     </div>
 </div>
 
 <div class="rectangle-container-two">
     <div class="rectangle" onclick="window.open('https://example.com/game4', '_blank')">
-        <img src="https://via.placeholder.com/400x250" alt="Game Image">
+        <img class="static-image" src="https://via.placeholder.com/400x250" alt="Game Image">
+        <img class="gif-image" src="https://media.giphy.com/media/JU7l5gRERaKlLDeTns/giphy.gif" alt="Game GIF">
         <div class="game-name">Game 4</div>
     </div>
     <div class="rectangle" onclick="window.open('https://example.com/game5', '_blank')">
-        <img src="https://via.placeholder.com/400x250" alt="Game Image">
+        <img class="static-image" src="https://via.placeholder.com/400x250" alt="Game Image">
+        <img class="gif-image" src="https://media.giphy.com/media/JU7l5gRERaKlLDeTns/giphy.gif" alt="Game GIF">
         <div class="game-name">Game 5</div>
     </div>
     <div class="rectangle" onclick="window.open('https://example.com/game6', '_blank')">
-        <img src="https://via.placeholder.com/400x250" alt="Game Image">
+        <img class="static-image" src="https://via.placeholder.com/400x250" alt="Game Image">
+        <img class="gif-image" src="https://media.giphy.com/media/JU7l5gRERaKlLDeTns/giphy.gif" alt="Game GIF">
         <div class="game-name">Game 6</div>
     </div>
 </div>
