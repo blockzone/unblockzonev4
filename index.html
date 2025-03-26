@@ -7,6 +7,8 @@
     <title>unblockzone v4</title>
     <link rel="icon" href="https://files.catbox.moe/ao6qv3.png" type="image/png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
 
 
     <!-- 100% privacy-first analytics -->
@@ -178,6 +180,116 @@ body {
             color: white;
             font-size: 18px;
         }
+
+        /* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Media query for iPad devices */
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+    body {
+        background-color: #e0e0e0; /* Light grey background for iPad */
+    }
+
+    .main-content {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    h1 {
+        font-size: 2em;
+        text-align: center;
+    }
+
+    .game-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .game-thumbnail img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Portrait iPad */
+@media only screen and (max-height: 1024px) and (min-height: 768px) {
+    body {
+        background-color: #dcdcdc;
+    }
+
+    .main-content {
+        width: 90%;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+        padding-bottom: 10px;
+    }
+
+    .game-thumbnail {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Landscape iPad */
+@media only screen and (max-width: 768px) {
+    body {
+        background-color: #cccccc;
+    }
+
+    .main-content {
+        width: 70%;
+    }
+
+    .game-thumbnail img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Media query for mobile phones (max-width: 767px) */
+@media only screen and (max-width: 767px) {
+    /* For smaller screens, fit the page to the device width */
+    body {
+        background-color: #f4f4f4; /* Standard background color for phones */
+    }
+
+    .main-content {
+        width: 100%; /* Full width for phones */
+        padding: 5px; /* Reduced padding */
+    }
+
+    h1 {
+        font-size: 1.8em; /* Adjust text size for phones */
+        text-align: center;
+    }
+
+    /* Resize the grid for mobile screens to fit properly */
+    .game-container {
+        display: grid;
+        grid-template-columns: 1fr; /* Single column layout for mobile */
+        gap: 10px; /* Reduced gap */
+    }
+
+    .game-thumbnail img {
+        width: 100%; /* Ensure images scale to fit the screen */
+        height: auto;
+    }
+
+    /* Ensure any large elements scale well */
+    .large-element {
+        width: 100%;
+        font-size: 1.2em;
+    }
+}
 
 .rectangle-container {
     display: flex;
