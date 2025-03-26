@@ -37,18 +37,19 @@ body {
     background-size: 400% 400%;
     animation: moveGradient 20s infinite alternate ease-in-out;
 }
-
+        /* Icon container for smooth shine effect */
 .icon-container {
     position: relative;
     overflow: hidden;
-    border-radius: 20px; 
+    border-radius: 20px; /* Keeps the shine effect within rounded edges */
     transition: transform 0.3s ease-in-out;
 }
 
 .icon-container:hover {
-    transform: scale(1.1); 
+    transform: scale(1.1); /* Slight zoom effect for smooth interaction */
 }
 
+/* Clean, smooth shine effect */
 .icon-container::before {
     content: '';
     position: absolute;
@@ -66,6 +67,45 @@ body {
 .icon-container:hover::before {
     left: 100%;
 }
+
+    
+        .icons-container {
+            position: absolute;
+            top: 40%;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            width: 100%;
+        }
+        .icon-container {
+            width: 100px;
+            height: 120px;
+            background: black;
+            border: 3px solid white;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transform: translateZ(0);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            will-change: transform;
+        }
+        .icon-container:hover {
+            transform: scale(1.1) translateZ(0);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        }
+        .icon {
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+        }
+        .icon-label {
+            margin-top: 5px;
+            font-size: 14px;
+            color: white;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
 
         * {
             margin: 0;
