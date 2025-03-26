@@ -328,6 +328,77 @@ body {
     transform: scale(1.05);
 }
 
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  background: linear-gradient(to bottom, #87CEEB, #ffffff);
+  overflow: hidden;
+}
+
+.clouds {
+  position: relative;
+  height: 100%;
+}
+
+.cloud {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0;
+  animation: fadeInOut 10s infinite, float 15s linear infinite;
+}
+
+.cloud1 {
+  width: 180px;
+  height: 120px;
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s, 5s;
+}
+
+.cloud2 {
+  width: 250px;
+  height: 160px;
+  top: 40%;
+  left: 60%;
+  animation-delay: 2s, 8s;
+}
+
+.cloud3 {
+  width: 200px;
+  height: 140px;
+  top: 60%;
+  left: 30%;
+  animation-delay: 4s, 10s;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+
 
 /* Static Image (Default) */
 .static-image {
@@ -594,6 +665,12 @@ body {
         <div class="game-name">Game 6</div>
     </div>
 </div>
+
+      <div class="clouds">
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+  </div>
 
 
  <div class="particles" style->
