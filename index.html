@@ -263,6 +263,29 @@ body {
 .rectangle:hover .game-name {
     opacity: 1;
 }
+                .popular-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 100px;
+            height: 30px;
+            background-color: #FFA500;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-size: 14px;
+            color: white;
+            font-weight: bold;
+            text-shadow: 0 0 10px white;
+            box-shadow: 0 0 10px #FFA500;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .popular-badge:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px #FFA500;
+        }
 
         .coolBlobIdk {
             position: fixed;
@@ -344,16 +367,19 @@ body {
         <img class="static-image" src="https://9to5mac.com/wp-content/uploads/sites/6/2023/03/subway-surfers-4-billion-downloads.jpg?quality=82&strip=all" alt="Game Image">
         <img class="gif-image" src="https://www.icegif.com/wp-content/uploads/2025/02/subway-surfers-icegif-6.gif" alt="Game GIF">
         <div class="game-name">subway surfers</div>
+                            <div class="popular-badge">POPULAR 🔥</div>
     </div>
     <div class="rectangle" onclick="window.open('/g/roblox.html', '_blank')">
         <img class="static-image" src="https://i.ytimg.com/vi/n8Hpsy7xOLs/maxresdefault.jpg" alt="Game Image">
         <img class="gif-image" src="https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/3X/9/b/9bfc1dfe89bdfd8906a4bdb7cbfc27a01f8b4904.gif" alt="Game GIF">
         <div class="game-name">roblox</div>
+                            <div class="popular-badge">POPULAR 🔥</div>
     </div>
     <div class="rectangle" onclick="window.open('https://example.com/game3', '_blank')">
         <img class="static-image" src="https://images.squarespace-cdn.com/content/v1/5cedd5e7c6e7df0001bbb67c/1564551973622-EE9YJORD9OFXPKW9NYKW/Banner_Video_Cover.jpg?format=1500w" alt="Game Image">
         <img class="gif-image" src="https://www.harderbloggerfaster.com/wp-content/uploads/2016/09/CrossyRoad-intro.gif" alt="Game GIF">
         <div class="game-name">crossy road</div>
+                            <div class="popular-badge">POPULAR 🔥</div>
     </div>
 </div>
 
