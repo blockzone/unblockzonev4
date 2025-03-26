@@ -263,6 +263,67 @@ body {
     opacity: 1;
 }
 
+    .slideshow-container {
+    position: relative;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.slideshow-item {
+    width: 400px;
+    height: 250px;
+    background-color: black;
+    border-radius: 15px;
+    box-shadow: 0 0 20px white;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.slideshow-item:hover {
+    transform: scale(1.05);
+}
+
+.slideshow-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.slideshow-img.active {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.game-name {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+    text-transform: lowercase;
+}
+
+.slideshow-item:hover .game-name {
+    opacity: 1;
+}
+
+
         .coolBlobIdk {
             position: fixed;
             bottom: -30%;
@@ -373,6 +434,56 @@ body {
         <div class="game-name">Game 6</div>
     </div>
 </div>
+
+    document.addEventListener("DOMContentLoaded", function () {
+    const imageUrls = [
+        "https://via.placeholder.com/400x250?text=Game+1",
+        "https://via.placeholder.com/400x250?text=Game+2",
+        "https://via.placeholder.com/400x250?text=Game+3",
+        "https://via.placeholder.com/400x250?text=Game+4",
+        "https://via.placeholder.com/400x250?text=Game+5",
+        "https://via.placeholder.com/400x250?text=Game+6",
+        "https://via.placeholder.com/400x250?text=Game+7",
+        "https://via.placeholder.com/400x250?text=Game+8",
+        "https://via.placeholder.com/400x250?text=Game+9",
+        "https://via.placeholder.com/400x250?text=Game+10"
+    ];
+
+    let currentIndex = 0;
+    const slideshowItems = document.querySelectorAll(".slideshow-item img");
+
+    function updateSlideshow() {
+        slideshowItems.forEach((img, i) => {
+            img.classList.remove("active");
+            img.src = imageUrls[(currentIndex + i) % imageUrls.length];
+        });
+
+        setTimeout(() => {
+            slideshowItems.forEach(img => img.classList.add("active"));
+        }, 100); // Delay to trigger fade-in
+
+        currentIndex = (currentIndex + 1) % imageUrls.length;
+    }
+
+    updateSlideshow();
+    setInterval(updateSlideshow, 5000);
+});
+
+    <div class="slideshow-container">
+    <div class="slideshow-item">
+        <img class="slideshow-img active" src="https://via.placeholder.com/400x250?text=Game+1">
+        <div class="game-name">Game 1</div>
+    </div>
+    <div class="slideshow-item">
+        <img class="slideshow-img active" src="https://via.placeholder.com/400x250?text=Game+2">
+        <div class="game-name">Game 2</div>
+    </div>
+    <div class="slideshow-item">
+        <img class="slideshow-img active" src="https://via.placeholder.com/400x250?text=Game+3">
+        <div class="game-name">Game 3</div>
+    </div>
+</div>
+
 
 
  <div class="particles" style->
