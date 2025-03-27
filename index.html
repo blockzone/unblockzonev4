@@ -382,6 +382,79 @@ body {
 .rectangle:hover .game-name {
     opacity: 1;
 }
+        .phone-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin-top: 270vh; /* Adjust as needed */
+}
+
+.phone-rectangle {
+    width: 180px; /* 9:16 aspect ratio */
+    height: 320px;
+    background-color: grey;
+    border-radius: 15px;
+    box-shadow: 0 0 20px white;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.phone-rectangle:hover {
+    transform: scale(1.05);
+}
+
+/* Keep hover effects for images */
+.phone-rectangle .static-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.phone-rectangle .gif-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.phone-rectangle:hover .gif-image {
+    opacity: 1;
+    filter: blur(5px) brightness(60%);
+}
+
+.phone-rectangle:hover .static-image {
+    opacity: 0;
+}
+
+/* Game Name */
+.phone-rectangle .game-name {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    color: white;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+    text-transform: lowercase;
+}
+
+.phone-rectangle:hover .game-name {
+    opacity: 1;
+}
+
                 .popular-badge {
             position: absolute;
             top: 10px;
@@ -600,6 +673,25 @@ body {
         <div class="game-name">monkey mart</div>
     </div>
 </div>
+
+    <div class="phone-container">
+    <div class="phone-rectangle" onclick="window.open('/g/temple-run.html', '_blank')">
+        <img class="static-image" src="https://upload.wikimedia.org/wikipedia/en/thumb/3/35/Temple_Run_Logo.png/220px-Temple_Run_Logo.png" alt="Game Image">
+        <img class="gif-image" src="https://www.icegif.com/wp-content/uploads/2025/02/temple-run-gif.gif" alt="Game GIF">
+        <div class="game-name">temple run</div>
+    </div>
+    <div class="phone-rectangle" onclick="window.open('/g/geometry-dash.html', '_blank')">
+        <img class="static-image" src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Geometry_Dash_Logo.png/220px-Geometry_Dash_Logo.png" alt="Game Image">
+        <img class="gif-image" src="https://www.icegif.com/wp-content/uploads/2025/02/geometry-dash-gif.gif" alt="Game GIF">
+        <div class="game-name">geometry dash</div>
+    </div>
+    <div class="phone-rectangle" onclick="window.open('/g/crossy-road.html', '_blank')">
+        <img class="static-image" src="https://upload.wikimedia.org/wikipedia/en/thumb/3/3f/CrossyRoad.jpg/220px-CrossyRoad.jpg" alt="Game Image">
+        <img class="gif-image" src="https://www.icegif.com/wp-content/uploads/2025/02/crossy-road-gif.gif" alt="Game GIF">
+        <div class="game-name">crossy road</div>
+    </div>
+</div>
+
 
 
  <div class="particles" style->
