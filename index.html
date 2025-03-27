@@ -533,17 +533,13 @@ body {
     height: 100%;
     border-radius: 15px;
     object-fit: cover;
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
 
-/* Remove or comment out the hover effect for GIF */
-.phone-rectangle:hover .phone-gif-image {
-    opacity: 0; /* Ensure the GIF is not visible */
-    filter: none; /* Remove blur and brightness effect */
-}
-
+/* Apply blur and dim effect to the static image when the phone is hovered */
 .phone-rectangle:hover .phone-static-image {
-    opacity: 1; /* Keep the static image visible */
+    opacity: 0.7; /* Dims the image */
+    filter: blur(5px) brightness(60%); /* Adds blur and dims the image */
 }
 
 .phone-game-name {
@@ -561,6 +557,7 @@ body {
 .phone-rectangle:hover .phone-game-name {
     opacity: 1;
 }
+
 
 
     </style>
