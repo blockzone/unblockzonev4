@@ -510,6 +510,99 @@ body {
 }
 
     </style>
+
+    <style>
+    .phone-container {
+        display: flex;
+        gap: 20px;
+        margin-top: 20px; /* Adjust placement */
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 20px;
+    }
+
+    .phone-rectangle {
+        width: 200px; /* Adjusted for 9:16 aspect ratio */
+        height: 356px;
+        background-color: grey;
+        border-radius: 15px;
+        box-shadow: 0 0 20px white;
+        position: relative;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+        overflow: hidden;
+    }
+
+    .phone-rectangle:hover {
+        transform: scale(1.05);
+    }
+
+    .phone-static-image {
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+        object-fit: cover;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .phone-gif-image {
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out, filter 0.3s ease-in-out;
+    }
+
+    .phone-rectangle:hover .phone-gif-image {
+        opacity: 1;
+        filter: blur(5px) brightness(60%);
+    }
+
+    .phone-rectangle:hover .phone-static-image {
+        opacity: 0;
+    }
+
+    .phone-game-name {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 20px;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        color: white;
+        font-weight: bold;
+        text-transform: lowercase;
+    }
+
+    .phone-rectangle:hover .phone-game-name {
+        opacity: 1;
+    }
+</style>
+
+<div class="phone-container">
+    <div class="phone-rectangle" onclick="window.open('/g/game1.html', '_blank')">
+        <img class="phone-static-image" src="https://example.com/game1.jpg" alt="Game Image">
+        <img class="phone-gif-image" src="https://example.com/game1.gif" alt="Game GIF">
+        <div class="phone-game-name">Game 1</div>
+    </div>
+
+    <div class="phone-rectangle" onclick="window.open('/g/game2.html', '_blank')">
+        <img class="phone-static-image" src="https://example.com/game2.jpg" alt="Game Image">
+        <img class="phone-gif-image" src="https://example.com/game2.gif" alt="Game GIF">
+        <div class="phone-game-name">Game 2</div>
+    </div>
+
+    <div class="phone-rectangle" onclick="window.open('/g/game3.html', '_blank')">
+        <img class="phone-static-image" src="https://example.com/game3.jpg" alt="Game Image">
+        <img class="phone-gif-image" src="https://example.com/game3.gif" alt="Game GIF">
+        <div class="phone-game-name">Game 3</div>
+    </div>
+</div>
+
     
     <script>
         function handleSearch(event) {
