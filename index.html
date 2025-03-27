@@ -524,44 +524,44 @@ body {
     margin-top: -10px; /* Adjusted to move it up a little */
 }
 
+.phone-rectangle:hover {
+    transform: scale(1.05);
+}
 
+.phone-static-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out;
+}
 
-    .phone-rectangle:hover {
-        transform: scale(1.05);
-    }
+/* Remove or comment out the hover effect for GIF */
+.phone-rectangle:hover .phone-gif-image {
+    opacity: 0; /* Ensure the GIF is not visible */
+    filter: none; /* Remove blur and brightness effect */
+}
 
-    .phone-static-image {
-        width: 100%;
-        height: 100%;
-        border-radius: 15px;
-        object-fit: cover;
-        transition: opacity 0.3s ease-in-out;
-    }
+.phone-rectangle:hover .phone-static-image {
+    opacity: 1; /* Keep the static image visible */
+}
 
-    .phone-rectangle:hover .phone-gif-image {
-        opacity: 1;
-        filter: blur(5px) brightness(60%);
-    }
+.phone-game-name {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    color: white;
+    font-weight: bold;
+    text-transform: lowercase;
+}
 
-    .phone-rectangle:hover .phone-static-image {
-        opacity: 0;
-    }
+.phone-rectangle:hover .phone-game-name {
+    opacity: 1;
+}
 
-    .phone-game-name {
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        font-size: 20px;
-        opacity: 0;
-        transition: opacity 0.3s ease-in-out;
-        color: white;
-        font-weight: bold;
-        text-transform: lowercase;
-    }
-
-    .phone-rectangle:hover .phone-game-name {
-        opacity: 1;
-    }
 
     </style>
     
