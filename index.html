@@ -601,6 +601,28 @@ body {
         text-decoration: underline;
         text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
     }
+
+        .cursor-dot {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    transition: transform 0.08s ease-out;
+}
+        document.addEventListener("DOMContentLoaded", () => {
+    const cursorDot = document.createElement("div");
+    cursorDot.classList.add("cursor-dot");
+    document.body.appendChild(cursorDot);
+
+    document.addEventListener("mousemove", (e) => {
+        cursorDot.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+    });
+});
+
+
 </style>
 
 
@@ -796,6 +818,7 @@ body {
             });
         });
     </script>
+
 
          <div class="bottom-text" id="scrollText" onclick="window.location.href='/mobile.html'">
         mobile
