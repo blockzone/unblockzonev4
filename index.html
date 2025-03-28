@@ -612,16 +612,6 @@ body {
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
     transition: transform 0.08s ease-out;
 }
-        document.addEventListener("DOMContentLoaded", () => {
-    const cursorDot = document.createElement("div");
-    cursorDot.classList.add("cursor-dot");
-    document.body.appendChild(cursorDot);
-
-    document.addEventListener("mousemove", (e) => {
-        cursorDot.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-    });
-});
-
 
 </style>
 
@@ -815,6 +805,18 @@ body {
                     }
                 },
                 "retina_detect": false
+            });
+        });
+    </script>
+
+         <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const cursorDot = document.createElement("div");
+            cursorDot.classList.add("cursor-dot");
+            document.body.appendChild(cursorDot);
+
+            document.addEventListener("mousemove", (e) => {
+                cursorDot.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
             });
         });
     </script>
