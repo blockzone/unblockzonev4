@@ -31,13 +31,42 @@
         }
 
         body {
-            background: black;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            background: url('https://img.freepik.com/free-photo/artistic-blurry-colorful-wallpaper-background_58702-8520.jpg?semt=ais_hybrid') no-repeat center center fixed;
+            background-size: cover;
             height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            flex-direction: column;
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+                @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .title {
+            position: absolute;
+            top: 25%; 
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 48px;
+            font-weight: bold;
+            text-transform: lowercase;
+            color: white;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+            text-shadow: none;
+        }
+
+        .title:hover {
+            transform: translateX(-50%) scale(1.1);
         }
 
         #particles-js {
@@ -51,6 +80,8 @@
 </head>
 <body>
     <div id="particles-js"></div>
+
+        <div class="title">unblockzone mini</div>
 
     <script>
         particlesJS("particles-js", {
