@@ -602,23 +602,6 @@ body {
         text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
     }
 
-        /* Hide the default cursor */
-        body {
-            cursor: none;
-        }
-
-        /* Custom glowing cursor */
-        .cursor-dot {
-            position: fixed;
-            width: 12px;
-            height: 12px;
-            background-color: white;
-            border-radius: 50%;
-            pointer-events: none;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
-            transform: translate(-50%, -50%);
-        }
-
 </style>
 
 
@@ -811,21 +794,6 @@ body {
                     }
                 },
                 "retina_detect": false
-            });
-        });
-    </script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            // Create the cursor element
-            const cursorDot = document.createElement("div");
-            cursorDot.classList.add("cursor-dot");
-            document.body.appendChild(cursorDot);
-
-            // Update position instantly on mousemove
-            document.addEventListener("mousemove", (e) => {
-                cursorDot.style.left = `${e.clientX}px`;
-                cursorDot.style.top = `${e.clientY}px`;
             });
         });
     </script>
