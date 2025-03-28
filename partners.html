@@ -110,30 +110,35 @@
         .title:hover {
             transform: scale(1.2);
         }
-        .rectangle-container {
-            display: flex;
-            gap: 20px;
-            margin-top: 40px;
-        }
-        .rectangle {
-            width: 400px;
-            height: 250px;
-            background-color: black;
-            border-radius: 15px;
-            box-shadow: 0 0 20px white;
-            position: relative;
-            transition: transform 0.3s ease-in-out;
-            cursor: pointer;
-        }
-        .rectangle:hover {
-            transform: scale(1.05);
-        }
-        .rectangle img {
-            width: 100%;
-            height: 100%;
-            border-radius: 15px;
-            object-fit: cover;
-        }
+.rectangle {
+    width: 400px;
+    height: 250px;
+    background-color: black;
+    border-radius: 15px;
+    box-shadow: 0 0 20px white;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.rectangle:hover {
+    transform: scale(1.05);
+}
+
+.rectangle img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+    transition: filter 0.3s ease-in-out;
+}
+
+/* Apply dimming and blurring effect on hover */
+.rectangle:hover img {
+    filter: blur(5px) brightness(0.5);
+}
+
 
                 .game-name {
             position: absolute;
