@@ -493,6 +493,24 @@ body {
     }
 }
 
+        window.addEventListener("DOMContentLoaded", function() {
+    let link = document.createElement("a");
+    link.href = "https://example.com";
+    link.target = "_blank";
+    link.innerText = "mobile";
+    link.style.position = "fixed";
+    link.style.bottom = "10px";
+    link.style.left = "10px";
+    link.style.fontFamily = "Arial, sans-serif";
+    link.style.fontWeight = "bold";
+    link.style.color = "white";
+    link.style.textDecoration = "underline";
+    link.style.fontStyle = "italic";
+    link.style.textShadow = "0px 0px 8px rgba(255, 255, 255, 0.8)";
+    link.style.fontSize = "12px";
+    document.body.appendChild(link);
+});
+
 
 #particles-js {
     position: fixed; /* Keeps it in place even when scrolling */
