@@ -529,6 +529,32 @@ body {
     z-index: -1; /* Ensures it's behind other content */
     pointer-events: none; /* Prevents interaction */
 }
+                /* Update log text positioning */
+        .update-log {
+            position: fixed;
+            left: 80px; /* Adjust this to position next to the first text */
+            bottom: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 1);
+            transition: transform 0.2s ease, opacity 0.3s ease;
+            cursor: pointer;
+        }
+
+        .update-log:hover {
+            transform: scale(1.1); /* Zoom effect on click */
+        }
+
+        /* Hide the text when scrolling down */
+        .hidden {
+            opacity: 0;
+        }
+
+        .visible {
+            opacity: 1;
+        }
 
 .phone-container {
     display: flex;
@@ -585,7 +611,7 @@ body {
     opacity: 1;
 }
 
-        <a href="https://your-link-here.com" target="_blank" class="mobile-link">Mobile</a>
+        <a href="/mobile.html" target="_blank" class="mobile-link">Mobile</a>
 
 <style>
     .mobile-link {
@@ -798,6 +824,11 @@ body {
 
          <div class="bottom-text" id="scrollText" onclick="window.location.href='/mobile.html'">
         mobile
+    </div>
+
+         <!-- Update Log text -->
+    <div class="update-log" id="updateLog" onclick="showGlowingMessage('Welcome to unblockzone! Take a look around... Warning: The proxy shows up in your history, I\'m working on a tab cloaker for it.')">
+        update log
     </div>
 
     <script>
