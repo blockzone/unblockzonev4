@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,9 +57,6 @@
             left: 50%;
             transform: translateX(-50%);
             text-align: center;
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
 
         .title {
@@ -66,8 +64,9 @@
             font-weight: bold;
             text-transform: lowercase;
             color: white;
-            text-shadow: 0 0 15px rgba(255, 255, 255, 1); /* Added glow effect */
+            text-shadow: none;
             transition: transform 0.3s ease-in-out;
+            display: inline-block;
         }
 
         .title:hover {
@@ -83,19 +82,15 @@
             transition: transform 0.3s ease-in-out;
         }
 
-        .status {
-            display: flex;
-            align-items: center;
+        .clock {
+            position: absolute;
+            top: 34%;
+            left: 50%;
+            transform: translateX(-50%);
             font-size: 20px;
             font-weight: bold;
             color: white;
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
-        }
-
-        .battery-icon {
-            width: 20px;
-            height: 20px;
-            margin-right: 5px;
         }
 
         #particles-js {
@@ -113,15 +108,11 @@
     <div id="particles-js"></div>
 
     <div class="title-container">
-        <div class="status">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Battery_icon.svg" alt="Battery" class="battery-icon">
-            <span id="clock">--:--:--</span>
-            <span id="battery">--%</span>
-        </div>
         <div class="title">unblockzone mini</div>
+        <div class="title-line"></div>
     </div>
     
-    <div class="title-line"></div>
+    <div class="clock" id="clock">Loading time...</div>
 
     <script>
         function updateClock() {
@@ -131,23 +122,9 @@
             const seconds = now.getSeconds().toString().padStart(2, '0');
             document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
         }
-
-        async function updateBattery() {
-            if (navigator.getBattery) {
-                const battery = await navigator.getBattery();
-                function setBatteryLevel() {
-                    document.getElementById('battery').textContent = `${Math.round(battery.level * 100)}%`;
-                }
-                setBatteryLevel();
-                battery.addEventListener('levelchange', setBatteryLevel);
-            } else {
-                document.getElementById('battery').textContent = "N/A";
-            }
-        }
         
         setInterval(updateClock, 1000);
         updateClock();
-        updateBattery();
     </script>
 
     <script src="scripts/utilities/shared.js"></script>
