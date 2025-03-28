@@ -185,6 +185,23 @@
             transform: scale(1.1);
             box-shadow: 0 0 20px #28a745;
         }
+
+                /* Hide the default cursor */
+        body {
+            cursor: none;
+        }
+
+        /* Custom glowing cursor */
+        .cursor-dot {
+            position: fixed;
+            width: 12px;
+            height: 12px;
+            background-color: white;
+            border-radius: 50%;
+            pointer-events: none;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+            transform: translate(-50%, -50%);
+        }
         
         /* Remove home button styles */
             
@@ -234,6 +251,22 @@
             }
         });
     </script>
+
+        <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Create the cursor element
+            const cursorDot = document.createElement("div");
+            cursorDot.classList.add("cursor-dot");
+            document.body.appendChild(cursorDot);
+
+            // Update position instantly on mousemove
+            document.addEventListener("mousemove", (e) => {
+                cursorDot.style.left = `${e.clientX}px`;
+                cursorDot.style.top = `${e.clientY}px`;
+            });
+        });
+    </script>
+    
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8PERVFVWRG"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
