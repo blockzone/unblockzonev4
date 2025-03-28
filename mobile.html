@@ -52,7 +52,7 @@
 
         .title-container {
             position: absolute;
-            top: 15%; /* Moved up */
+            top: 15%;
             left: 50%;
             transform: translateX(-50%);
             text-align: center;
@@ -63,7 +63,7 @@
             font-weight: bold;
             text-transform: lowercase;
             color: white;
-            text-shadow: 0 0 15px rgba(255, 255, 255, 1); /* Glowing effect */
+            text-shadow: 0 0 15px rgba(255, 255, 255, 1);
             transition: transform 0.3s ease-in-out;
             display: inline-block;
         }
@@ -83,13 +83,28 @@
 
         .clock {
             position: absolute;
-            top: 25%; /* Moved up */
+            top: 25%;
             left: 50%;
             transform: translateX(-50%);
             font-size: 25px;
             font-weight: bold;
             color: white;
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .battery-container {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .battery-icon {
+            width: 20px;
+            height: auto;
+            filter: invert(1);
         }
 
         #particles-js {
@@ -106,7 +121,13 @@
 <body>
     <div id="particles-js"></div>
 
-    <div class="clock" id="clock">Loading time...</div>
+    <div class="clock">
+        <span id="clock">Loading time...</span>
+        <div class="battery-container">
+            <img class="battery-icon" src="https://cdn-icons-png.flaticon.com/512/33/33784.png" alt="Battery">
+            <span id="battery">--%</span>
+        </div>
+    </div>
 
     <div class="title-container">
         <div class="title">unblockzone mini</div>
@@ -121,9 +142,24 @@
             const seconds = now.getSeconds().toString().padStart(2, '0');
             document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
         }
-        
+
+        function updateBattery() {
+            if (navigator.getBattery) {
+                navigator.getBattery().then(function(battery) {
+                    function setBattery() {
+                        document.getElementById('battery').textContent = Math.round(battery.level * 100) + '%';
+                    }
+                    setBattery();
+                    battery.addEventListener('levelchange', setBattery);
+                });
+            } else {
+                document.getElementById('battery').textContent = 'N/A';
+            }
+        }
+
         setInterval(updateClock, 1000);
         updateClock();
+        updateBattery();
     </script>
 
     <script src="scripts/utilities/shared.js"></script>
