@@ -3,25 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>unblockzone mini</title>
-    <link rel="icon" href="https://files.catbox.moe/ao6qv3.png">
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZN69N4SEF"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-SZN69N4SEF');
-    </script>
-    
-    <!-- Tab Cloaking and Utility Scripts -->
-    <script src="scripts/utilities/tab-cloak.js"></script>
-    <script src="scripts/utilities/emergency-escape.js"></script>
-    <script src="scripts/utilities/theme.js"></script>
-    <script src="scripts/utilities/message-system.js"></script>
-    
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <title>Text Link Example</title>
     <style>
         * {
             margin: 0;
@@ -30,196 +12,67 @@
         }
 
         body {
-            background: url('https://img.freepik.com/free-photo/artistic-blurry-colorful-wallpaper-background_58702-8520.jpg?semt=ais_hybrid') no-repeat center center fixed;
-            background-size: cover;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            height: 200vh; /* Make the page scrollable */
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        /* Text at the bottom left */
+        .bottom-text {
+            position: fixed;
+            left: 10px;
+            bottom: 20px;
+            font-size: 12px; /* Small text */
+            font-weight: bold;
             color: white;
             font-family: Arial, sans-serif;
-            flex-direction: column;
-            opacity: 0;
-            animation: fadeIn 1s ease-in forwards;
-            position: relative;
-            overflow-x: hidden;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .title-container {
-            position: absolute;
-            top: 15%;
-            left: 50%;
-            transform: translateX(-50%);
-            text-align: center;
-        }
-
-        .title {
-            font-size: 40px;
-            font-weight: bold;
-            text-transform: lowercase;
-            color: white;
-            text-shadow: 0 0 15px rgba(255, 255, 255, 1);
-            transition: transform 0.3s ease-in-out;
-            display: inline-block;
-        }
-
-        .title:hover {
-            transform: scale(1.1);
-        }
-
-        .title-line {
-            width: 100%;
-            height: 3px;
-            background-color: white;
-            margin: 5px auto 0;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .clock {
-            position: absolute;
-            top: 25%;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 25px;
-            font-weight: bold;
-            color: white;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .battery-container {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .battery-icon {
-            width: 30px; /* Increased size */
-            height: auto;
-            filter: invert(1); /* Make it white */
-        }
-
-        .icons-container {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            position: absolute;
-            top: 35%; /* Adjust position */
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .icon {
-            width: 70px;  /* Increased size */
-            height: 70px;  /* Increased size */
-            border-radius: 15px;
-            border: 2px solid white;
-            transition: transform 0.2s ease-in-out;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 1); /* Glowing effect */
+            transition: transform 0.2s ease, opacity 0.3s ease;
             cursor: pointer;
-            background-size: cover;
-            background-position: center;
         }
 
-        .icon:hover {
-            transform: scale(1.1); /* Zoom effect on hover */
+        .bottom-text:hover {
+            transform: scale(1.1); /* Zoom effect on click */
         }
 
-        #particles-js {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: -1;
-            pointer-events: none;
+        /* Hide the text when scrolling down */
+        .hidden {
+            opacity: 0;
+        }
+
+        .visible {
+            opacity: 1;
         }
     </style>
 </head>
 <body>
-    <div id="particles-js"></div>
 
-    <div class="clock">
-        <span id="clock">loading time...</span>
-        <div class="battery-container">
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" class="battery-icon">
-                <path fill="white" d="M17 4h-2V3a1 1 0 0 0-1-1H10a1 1 0 0 0-1 1v1H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm-5 0H12V3h2v1zM7 6h10v12H7V6z"/>
-            </svg>
-            <span id="battery">--%</span>
-        </div>
-    </div>
-
-    <div class="title-container">
-        <div class="title">unblockzone mini</div>
-        <div class="title-line"></div>
-    </div>
-
-    <!-- First Row of Icons -->
-    <div class="icons-container">
-        <div class="icon" style="background-image: url('https://play-lh.googleusercontent.com/bBF-xD47BOb3nfbbXF-Isx8LdZHX_Uxz6h14ughVjhCVDzdWU2NeJzJIv1wW4F1q7Rw');" onclick="window.location.href='/g/subway-surfers.html'"></div>
-        <div class="icon" style="background-image: url('https://www.metacritic.com/a/img/catalog/provider/6/12/6-1-493122-52.jpg');" onclick="window.location.href='/g/crossy-road.html'"></div>
-        <div class="icon" style="background-image: url('https://play-lh.googleusercontent.com/R0qgNDYYHbRhw6JFsdEbDMqONplEvJx0m0W9wzYVvY3eNF1c2rfBWYjQxW0sLEzFe1E=w240-h480-rw');" onclick="window.location.href='/g/block-blast.html'"></div>
-        <div class="icon" style="background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/4/4d/Logo_of_Geometry_Dash.svg/1200px-Logo_of_Geometry_Dash.svg.png');" onclick="window.location.href='/g/geometry-dash.html'"></div>
-    </div>
-
-    <!-- Second Row of Icons -->
-    <div class="icons-container" style="top: 48%;"> <!-- Adjust position for the second row -->
-        <div class="icon" style="background-image: url('https://play-lh.googleusercontent.com/tRpviKT0mUi47iAaBne_yhe_xIuFzpW1mCIqoW457tNsKZddZHwiCUR2ga-rU3VXw04=w240-h480-rw');" onclick="window.location.href='/g/slither-io.html'"></div>
-        <div class="icon" style="background-image: url('https://cdn.jim-nielsen.com/ios/512/temple-run-2-2021-07-20.png?rf=1024');" onclick="window.location.href='/g/temple-run-2.html'"></div>
-        <div class="icon" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAnM190_Cof8oeQv2DyKhMtEty5qwNneoUpQ&s');" onclick="window.location.href='/g/flappy-bird.html'"></div>
-        <div class="icon" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnVGXDjA_rnijRZ85vxtbKKZC6hl0cumStGA&s');" onclick="window.location.href='/g/helix-jump.html'"></div>
-    </div>
-
-    <!-- Third Row of Icons -->
-    <div class="icons-container" style="top: 61%;"> <!-- Adjust position for the second row -->
-        <div class="icon" style="background-image: url('https://play-lh.googleusercontent.com/49tmTkafs_EYS--F6LA83IsiTGqjwhfayLuNACFlMM-EDhOJO4ijMa_3jhWl9aee4Q');" onclick="window.location.href='/g/lazy-jump-3d.html'"></div>
-        <div class="icon" style="background-image: url('https://img.cdn.famobi.com/portal/html5games/images/tmp/StairRace3dTeaser.jpg');" onclick="window.location.href='/g/stair-race-3d.html'"></div>
-        <div class="icon" style="background-image: url('https://play-lh.googleusercontent.com/uJn2i9h7KxYQarC_c3K4qH6o7gLtflFnhD_dN14MNkzHJ1NeNFzCL69jpB5mT0vCoQs');" onclick="window.location.href='/g/slope.html'"></div>
-        <div class="icon" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr91Vi-bWShTLvYMMcKeKBT2Bdc4uNGBDwkQ&s');" onclick="window.location.href='/g/tetris.html'"></div>
-    </div>
-
-    <div class="icons-container" style="top: 74%;"> <!-- Adjust position for the second row -->
-        <div class="icon" style="background-image: url('https://play-lh.googleusercontent.com/fUM-UyywXxjC8soxAZdIlxJrlRRXmql8wkE426SHzft4lJycSKVd2jCYQQX1BEG9Xw=w600-h300-pc0xffffff-pd');" onclick="window.location.href='/g/bitlife.html'"></div>
-        <div class="icon" style="background-image: url('https://play-lh.googleusercontent.com/5hF9MK9UFqcgUbX-1CKvmnTOt-XchFt6L5CK9FtEWIdPV2vYfFyqAdl73Kg5nSkDTKE=w240-h480-rw');" onclick="window.location.href='/g/magic-tiles-3.html'"></div>
-        <div class="icon" style="background-image: url('https://play-lh.googleusercontent.com/4G-mheUE3fcpM-eqOqMOK-bu6XNn-iMbd_kkAAQ1F1V8DAyoAzNgofBNdXuIShtTHzKY');" onclick="window.location.href='/g/tall-man-run.html'"></div>
-        <div class="icon" style="background-image: url('https://play-lh.googleusercontent.com/XLgrzsQrdw3Ovg_o4B9lvzhzhHcU-JlRBqPYfhPFp-3HE7c4p2MN5fhB7v27H2RDbA');" onclick="window.location.href='/g/hide-n-seek.html'"></div>
+    <div class="bottom-text" id="scrollText" onclick="window.location.href='https://your-custom-url.com'">
+        Click Me
     </div>
 
     <script>
-        function updateClock() {
-            const now = new Date();
-            const hours = now.getHours().toString().padStart(2, '0');
-            const minutes = now.getMinutes().toString().padStart(2, '0');
-            const seconds = now.getSeconds().toString().padStart(2, '0');
-            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
-        }
+        let lastScrollTop = 0; // To keep track of the scroll position
 
-        function updateBattery() {
-            if (navigator.getBattery) {
-                navigator.getBattery().then(function(battery) {
-                    function setBattery() {
-                        document.getElementById('battery').textContent = Math.round(battery.level * 100) + '%';
-                    }
-                    setBattery();
-                    battery.addEventListener('levelchange', setBattery);
-                });
+        // Function to handle scroll events
+        window.addEventListener('scroll', function() {
+            const scrollText = document.getElementById('scrollText');
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScroll > lastScrollTop) {
+                // Scroll Down
+                scrollText.classList.add('hidden');
+                scrollText.classList.remove('visible');
             } else {
-                document.getElementById('battery').textContent = 'N/A';
+                // Scroll Up
+                scrollText.classList.add('visible');
+                scrollText.classList.remove('hidden');
             }
-        }
 
-        setInterval(updateClock, 1000);
-        updateClock();
-        updateBattery();
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Ensure it's not negative
+        });
     </script>
 
-    <script src="scripts/utilities/shared.js"></script>
 </body>
 </html>
