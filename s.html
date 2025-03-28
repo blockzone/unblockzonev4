@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -420,24 +421,6 @@
         .about-blank-button:hover:after {
             left: 100%;
         }
-
-                /* Hide the default cursor */
-        body {
-            cursor: none;
-        }
-
-        /* Custom glowing cursor */
-        .cursor-dot {
-            position: fixed;
-            width: 12px;
-            height: 12px;
-            background-color: white;
-            border-radius: 50%;
-            pointer-events: none;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
-            transform: translate(-50%, -50%);
-        }
-        
     </style>
 </head>
 <body>
@@ -1313,21 +1296,6 @@
     <script>
         // Show a settings message
         // Message removed as requested
-    </script>
-
-        <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            // Create the cursor element
-            const cursorDot = document.createElement("div");
-            cursorDot.classList.add("cursor-dot");
-            document.body.appendChild(cursorDot);
-
-            // Update position instantly on mousemove
-            document.addEventListener("mousemove", (e) => {
-                cursorDot.style.left = `${e.clientX}px`;
-                cursorDot.style.top = `${e.clientY}px`;
-            });
-        });
     </script>
 
         </script>
