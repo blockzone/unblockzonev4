@@ -476,25 +476,19 @@ body {
         height: auto;
     }
 }
-                /* Text at the bottom left */
-        .bottom-text {
+        /* Fade-in and fade-out for the mobile text */
+        .mobile-text {
             position: fixed;
-            left: 15px;
-            bottom: 20px;
-            font-size: 20px; /* Small text */
+            left: 10px;
+            top: 20px;
+            font-size: 12px;
             font-weight: bold;
             color: white;
             font-family: Arial, sans-serif;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 1); /* Glowing effect */
-            transition: transform 0.2s ease, opacity 0.3s ease;
-            cursor: pointer;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 1);
+            transition: opacity 0.3s ease-in-out;
         }
 
-        .bottom-text:hover {
-            transform: scale(1.1); /* Zoom effect on click */
-        }
-
-        /* Hide the text when scrolling down */
         .hidden {
             opacity: 0;
         }
