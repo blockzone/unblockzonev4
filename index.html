@@ -751,20 +751,7 @@ body {
             });
         });
     </script>
-
-     function adjustViewport() {
-    if (/Mobi|Android/i.test(navigator.userAgent)) {
-        document.querySelector("meta[name=viewport]")?.remove();
-        let meta = document.createElement("meta");
-        meta.name = "viewport";
-        meta.content = "width=device-width, initial-scale=1.0, user-scalable=no";
-        document.head.appendChild(meta);
-    }
-}
-
-window.addEventListener("load", adjustViewport);
-
-
+     
     <script src="scripts/utilities/shared.js"></script>
     
     <script>
