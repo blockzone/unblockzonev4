@@ -107,30 +107,30 @@
             filter: invert(1); /* Make it white */
         }
 
-.icons-container {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    position: absolute;
-    top: 35%; /* Adjust position */
-    left: 50%;
-    transform: translateX(-50%);
-}
+        .icons-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            position: absolute;
+            top: 35%; /* Adjust position */
+            left: 50%;
+            transform: translateX(-50%);
+        }
 
-.icon {
-    width: 70px;  /* Increased size */
-    height: 70px;  /* Increased size */
-    border-radius: 15px;
-    border: 2px solid white;
-    transition: transform 0.2s ease-in-out;
-    cursor: pointer;
-    background-size: cover;
-    background-position: center;
-}
+        .icon {
+            width: 70px;  /* Increased size */
+            height: 70px;  /* Increased size */
+            border-radius: 15px;
+            border: 2px solid white;
+            transition: transform 0.2s ease-in-out;
+            cursor: pointer;
+            background-size: cover;
+            background-position: center;
+        }
 
-.icon:hover {
-    transform: scale(1.1); /* Zoom effect on hover */
-}
+        .icon:hover {
+            transform: scale(1.1); /* Zoom effect on hover */
+        }
 
         #particles-js {
             position: fixed;
@@ -161,12 +161,20 @@
         <div class="title-line"></div>
     </div>
 
-    <!-- Icon Links with Custom Image URLs -->
+    <!-- First Row of Icons -->
     <div class="icons-container">
         <div class="icon" style="background-image: url('https://play-lh.googleusercontent.com/bBF-xD47BOb3nfbbXF-Isx8LdZHX_Uxz6h14ughVjhCVDzdWU2NeJzJIv1wW4F1q7Rw');" onclick="window.location.href='/g/subway-surfers.html'"></div>
         <div class="icon" style="background-image: url('https://www.metacritic.com/a/img/catalog/provider/6/12/6-1-493122-52.jpg');" onclick="window.location.href='/g/crossy-road.html'"></div>
         <div class="icon" style="background-image: url('https://play-lh.googleusercontent.com/R0qgNDYYHbRhw6JFsdEbDMqONplEvJx0m0W9wzYVvY3eNF1c2rfBWYjQxW0sLEzFe1E=w240-h480-rw');" onclick="window.location.href='/g/block-blast.html'"></div>
         <div class="icon" style="background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/4/4d/Logo_of_Geometry_Dash.svg/1200px-Logo_of_Geometry_Dash.svg.png');" onclick="window.location.href='/g/geometry-dash.html'"></div>
+    </div>
+
+    <!-- Second Row of Icons -->
+    <div class="icons-container" style="top: 45%;"> <!-- Adjust position for the second row -->
+        <div class="icon" style="background-image: url('https://example.com/icon1.jpg');" onclick="window.location.href='/g/first-game.html'"></div>
+        <div class="icon" style="background-image: url('https://example.com/icon2.jpg');" onclick="window.location.href='/g/second-game.html'"></div>
+        <div class="icon" style="background-image: url('https://example.com/icon3.jpg');" onclick="window.location.href='/g/third-game.html'"></div>
+        <div class="icon" style="background-image: url('https://example.com/icon4.jpg');" onclick="window.location.href='/g/fourth-game.html'"></div>
     </div>
 
     <script>
