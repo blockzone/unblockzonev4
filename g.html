@@ -276,25 +276,8 @@
     box-shadow: 0 0 20px white; /* Stronger white glow on focus */
 }
 
-                /* Hide the default cursor */
-        body {
-            cursor: none;
-        }
-
-        /* Custom glowing cursor */
-        .cursor-dot {
-            position: fixed;
-            width: 12px;
-            height: 12px;
-            background-color: white;
-            border-radius: 50%;
-            pointer-events: none;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
-            transform: translate(-50%, -50%);
-        }
-
-                .sidebar {
-            width: 1in; /* 1 inch wide */
+        .sidebar {
+            width: 75px; /* 75 cm wide */
             height: 100vh; /* Full height */
             background: rgba(200, 162, 200, 0.5); /* Light purple with 50% transparency */
             position: fixed;
@@ -316,10 +299,19 @@
             color: black;
             text-decoration: none;
             font-size: 18px;
+            position: relative;
+            transition: color 0.3s ease;
         }
 
-        .sidebar a:hover {
-            background: rgba(150, 120, 190, 0.7); /* Slightly darker purple on hover */
+        .sidebar a span {
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .sidebar:hover a span {
+            opacity: 1;
+            transform: translateX(0);
         }
         
     </style>
@@ -336,11 +328,11 @@
         </div>
     </div>
 
-        <div class="sidebar">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
+    <div class="sidebar">
+        <a href="#">🔥 <span>popular</span></a>
+        <a href="#">🎮 <span>games</span></a>
+        <a href="#">⚙️ <span>settings</span></a>
+        <a href="#">📞 <span>contact</span></a>
     </div>
     
     <div class="icons">
