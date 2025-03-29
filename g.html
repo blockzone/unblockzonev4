@@ -277,7 +277,7 @@
     box-shadow: 0 0 20px white; /* Stronger white glow on focus */
 }
         
-        .sidebar {
+.sidebar {
     width: 50px; /* 50 px wide */
     height: 100vh; /* Full height */
     background-image: url('https://img.freepik.com/free-photo/artistic-blurry-colorful-wallpaper-background_58702-8520.jpg?semt=ais_hybrid');
@@ -304,13 +304,16 @@
     color: white; /* Text color is white */
     text-decoration: none;
     font-size: 18px;
+    font-weight: bold; /* Bold font */
     position: relative;
-    transition: transform 0.3s ease, color 0.3s ease;
+    transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.5), 0 0 15px rgba(255, 255, 255, 0.3);
 }
 
 .sidebar a:hover {
     transform: scale(1.1); /* Slight zoom-in effect */
     color: #ddd; /* Lighter text color on hover */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 15px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.5); /* Stronger glowing effect on hover */
 }
 
 .emoji-box {
@@ -360,6 +363,7 @@
     z-index: 500; /* Lower than sidebar */
     margin-left: 50px; /* Space to avoid overlap initially */
 }
+
 
 
         
