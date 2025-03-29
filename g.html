@@ -301,7 +301,12 @@
             text-decoration: none;
             font-size: 18px;
             position: relative;
-            transition: color 0.3s ease;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            transform: scale(1.1); /* Slight zoom-in effect */
+            color: #333; /* Darker text on hover */
         }
 
         .emoji-box {
@@ -360,10 +365,10 @@
     </div>
 
     <div class="sidebar">
-        <a href="#">🔥 <span>Popular</span></a>
-        <a href="#">🎮 <span>Games</span></a>
-        <a href="#">⚙️ <span>Settings</span></a>
-        <a href="#">📞 <span>Contact</span></a>
+        <a href="https://example.com/popular"><span class="emoji-box">🔥</span> <span>Popular</span></a>
+        <a href="https://example.com/games"><span class="emoji-box">🎮</span> <span>Games</span></a>
+        <a href="https://example.com/settings"><span class="emoji-box">⚙️</span> <span>Settings</span></a>
+        <a href="https://example.com/contact"><span class="emoji-box">📞</span> <span>Contact</span></a>
     </div>
     
     <div class="icons">
