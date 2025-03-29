@@ -602,29 +602,7 @@ body {
         text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
     }
 
-</style>
-
-
-
-
-    </style>
-    
-    <script>
-        function handleSearch(event) {
-            if (event.key === "Enter") {
-                let query = event.target.value.trim();
-                if (query) {
-                    let proxyUrl = `active/iframe.html#https://bing.com/search?q=${encodeURIComponent(query)}`;
-                    window.location.href = proxyUrl;
-                }
-            }
-        }
-
-        function openSupportPage() {
-            window.open('https://docs.google.com/forms/d/e/1FAIpQLScAjuO9s-lwojOfEMwf-_jtQOjWCzkrkz4NKGPCIpbED3k2rA/viewform', '_blank');
-        }
-
-                /* Popup Container */
+                        /* Popup Container */
         .popup {
             position: fixed;
             bottom: 20px;
@@ -676,6 +654,28 @@ body {
         .close-btn:hover {
             color: #ddd;
         }
+
+</style>
+
+
+
+
+    </style>
+    
+    <script>
+        function handleSearch(event) {
+            if (event.key === "Enter") {
+                let query = event.target.value.trim();
+                if (query) {
+                    let proxyUrl = `active/iframe.html#https://bing.com/search?q=${encodeURIComponent(query)}`;
+                    window.location.href = proxyUrl;
+                }
+            }
+        }
+
+        function openSupportPage() {
+            window.open('https://docs.google.com/forms/d/e/1FAIpQLScAjuO9s-lwojOfEMwf-_jtQOjWCzkrkz4NKGPCIpbED3k2rA/viewform', '_blank');
+        }
         
     </script>
 </head>
@@ -718,28 +718,6 @@ body {
         <p><strong>notify - unblockzone</strong></p>
         <p>welcome to unblockzone v4!</p>
     </div>
-
-    <script>
-        // Function to show the popup
-        function showPopup() {
-            const popup = document.getElementById("popup");
-            popup.classList.add("show");
-
-            // Auto-close after 5 seconds
-            setTimeout(() => {
-                closePopup();
-            }, 5000);
-        }
-
-        // Function to close the popup
-        function closePopup() {
-            const popup = document.getElementById("popup");
-            popup.classList.remove("show");
-        }
-
-        // Show the popup after 1 second
-        setTimeout(showPopup, 1000);
-    </script>
 
 <div class="rectangle-container">
     <div class="rectangle" onclick="window.open('/g/subway-surfers.html', '_blank')">
@@ -909,6 +887,28 @@ body {
     </script>
      
     <script src="scripts/utilities/shared.js"></script>
+
+         <script>
+        // Function to show the popup
+        function showPopup() {
+            const popup = document.getElementById("popup");
+            popup.classList.add("show");
+
+            // Auto-close after 5 seconds
+            setTimeout(() => {
+                closePopup();
+            }, 5000);
+        }
+
+        // Function to close the popup
+        function closePopup() {
+            const popup = document.getElementById("popup");
+            popup.classList.remove("show");
+        }
+
+        // Show the popup after 1 second
+        setTimeout(showPopup, 1000);
+    </script>
     
     <script>
         setTimeout(function() {
