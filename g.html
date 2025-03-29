@@ -277,6 +277,7 @@
 }
 
 
+
         .sidebar {
             width: 50px; /* 50 px wide */
             height: 100vh; /* Full height */
@@ -311,7 +312,7 @@
             color: #ddd; /* Lighter text color on hover */
         }
 
-        .emoji-box {
+        .sidebar a .emoji-box {
             position: relative;
             display: inline-block;
             padding: 5px;
@@ -319,7 +320,7 @@
             transition: transform 0.3s ease;
         }
 
-        .emoji-box::before {
+        .sidebar a .emoji-box::before {
             content: "";
             position: absolute;
             top: 0;
@@ -333,11 +334,11 @@
             z-index: -1;
         }
 
-        .emoji-box:hover::before {
+        .sidebar a:hover .emoji-box::before {
             opacity: 1; /* Fade-in white background */
         }
 
-        .emoji-box:hover {
+        .sidebar a .emoji-box:hover {
             transform: scale(1.2); /* Slight zoom-in effect */
         }
 
@@ -374,10 +375,29 @@
     </div>
 
     <div class="sidebar">
-        <a href="https://example.com/popular"><span class="emoji-box">🔥</span> <span>| popular</span></a>
-        <a href="https://example.com/games"><span class="emoji-box">🎮</span> <span>| games</span></a>
-        <a href="https://example.com/settings"><span class="emoji-box">⚙️</span> <span>| settings</span></a>
-        <a href="https://example.com/contact"><span class="emoji-box">📞</span> <span>| contact</span></a>
+        <a href="https://example.com/popular">
+            <span class="emoji-box">🔥</span> 
+            <span>| popular</span>
+        </a>
+        <a href="https://example.com/games">
+            <span class="emoji-box">🎮</span>
+            <span>| games</span>
+        </a>
+        <a href="https://example.com/settings">
+            <span class="emoji-box">⚙️</span>
+            <span>| settings</span>
+        </a>
+        <a href="https://example.com/contact">
+            <span class="emoji-box">📞</span>
+            <span>| contact</span>
+        </a>
+    </div>
+
+    <div class="content">
+        <!-- Example content to show the overlap with round rectangles -->
+        <div style="width: 100px; height: 100px; background-color: #4CAF50; border-radius: 50px;">
+            Round Rectangles
+        </div>
     </div>
     
     <div class="icons">
