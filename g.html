@@ -276,8 +276,9 @@
     box-shadow: 0 0 20px white; /* Stronger white glow on focus */
 }
 
+
         .sidebar {
-            width: 50px; /* 75 px wide */
+            width: 50px; /* 50 px wide */
             height: 100vh; /* Full height */
             background: rgba(200, 162, 200, 0.5); /* Light purple with 50% transparency */
             position: fixed;
@@ -287,6 +288,7 @@
             overflow-x: hidden;
             white-space: nowrap;
             padding-top: 20px;
+            z-index: 1000; /* Ensure it appears above other content */
         }
 
         .sidebar:hover {
@@ -348,6 +350,13 @@
         .sidebar:hover a span {
             opacity: 1;
             transform: translateX(0);
+        }
+
+        /* Ensuring other elements with round rectangles (e.g., content or buttons) have lower z-index */
+        .content {
+            position: relative;
+            z-index: 500; /* Lower than sidebar */
+            margin-left: 50px; /* Space to avoid overlap initially */
         }
         
     </style>
