@@ -159,6 +159,15 @@
         .rectangle:hover .game-name {
             opacity: 1;
         }
+
+                #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
         
         /* Remove home button styles */
             
@@ -383,50 +392,98 @@
     <script>
         // Apps page specific code
         
-        // App search functionality
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Initialize particles with theme colors
         document.addEventListener('DOMContentLoaded', function() {
-            const searchBar = document.getElementById('appSearch');
-            const appCards = document.querySelectorAll('.rectangle');
+            const theme = window.getCurrentTheme ? window.getCurrentTheme() : {
+                particleColor: "#ffffff",
+                particleLinks: "#ffffff"
+            };
             
-            // Create an index of all apps for quick lookup
-            const appIndex = [];
-            appCards.forEach(card => {
+            // Initialize particles
+            particlesJS("particles-js", {
+                "particles": {
+                    "number": { "value": 20, "density": { "enable": false } },
+                    "color": { "value": theme.particleColor || "#ffffff" },
+                    "shape": { "type": "circle" },
+                    "opacity": { "value": 0.7, "random": true },
+                    "size": { "value": 3, "random": true },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": theme.particleLinks || "#ffffff",
+                        "opacity": 0.6,
+                        "width": 1
+                    },
+                    "move": { 
+                        "enable": true, 
+                        "speed": 2, 
+                        "direction": "none",
+                        "random": true,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": { 
+                        "onhover": { "enable": false },
+                        "onclick": { "enable": false },
+                        "resize": true 
+                    }
+                },
+                "retina_detect": false
+            });
+        });
+    </script>
+    <script src="scripts/utilities/shared.js"></script>
+    <script>
+        // Game search functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchBar = document.getElementById('gameSearch');
+            const gameCards = document.querySelectorAll('.rectangle');
+            
+            // Create an index of all games for quick lookup
+            const gameIndex = [];
+            gameCards.forEach(card => {
                 // Skip iframes
                 if (!card.querySelector('.game-name')) return;
                 
-                const appName = card.querySelector('.game-name').textContent.toLowerCase().trim();
+                const gameName = card.querySelector('.game-name').textContent.toLowerCase().trim();
                 const onclickAttr = card.getAttribute('onclick');
-                let appUrl = null;
+                let gameUrl = null;
                 
                 // Extract URL from onclick attribute
                 if (onclickAttr && onclickAttr.includes("window.location.href='")) {
-                    appUrl = onclickAttr.split("window.location.href='")[1].split("'")[0];
-                    appIndex.push({
-                        name: appName,
+                    gameUrl = onclickAttr.split("window.location.href='")[1].split("'")[0];
+                    gameIndex.push({
+                        name: gameName,
                         element: card,
-                        url: appUrl
+                        url: gameUrl
                     });
                 }
             });
             
-            // Function to filter apps based on search input
-            function filterApps(query) {
+            // Function to filter games based on search input
+            function filterGames(query) {
                 if (!query) {
-                    // Show all apps if query is empty
-                    appCards.forEach(card => card.style.display = '');
+                    // Show all games if query is empty
+                    gameCards.forEach(card => card.style.display = '');
                     document.querySelectorAll('.rectangle-container').forEach(container => {
                         container.style.display = 'flex';
                     });
                     return null;
                 }
                 
-                // Filter apps by search query
-                const matches = appIndex.filter(app => app.name.includes(query));
+                // Filter games by search query
+                const matches = gameIndex.filter(game => game.name.includes(query));
                 
-                // Hide all apps first
-                appCards.forEach(card => card.style.display = 'none');
+                // Hide all games first
+                gameCards.forEach(card => card.style.display = 'none');
                 
-                // Show only matching apps
+                // Show only matching games
                 matches.forEach(match => match.element.style.display = '');
                 
                 // Show/hide containers based on visible cards
@@ -442,7 +499,7 @@
             
             // Input event for real-time filtering
             searchBar.addEventListener('input', function() {
-                filterApps(this.value.toLowerCase().trim());
+                filterGames(this.value.toLowerCase().trim());
             });
             
             // Enter key press to navigate to first result
@@ -451,7 +508,7 @@
                     event.preventDefault();
                     
                     const query = this.value.toLowerCase().trim();
-                    const match = filterApps(query);
+                    const match = filterGames(query);
                     
                     if (match && match.url) {
                         // Use direct window.location assignment for more reliable navigation
