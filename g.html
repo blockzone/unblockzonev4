@@ -292,6 +292,35 @@
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
             transform: translate(-50%, -50%);
         }
+
+                .sidebar {
+            width: 1in; /* 1 inch wide */
+            height: 100vh; /* Full height */
+            background: rgba(200, 162, 200, 0.5); /* Light purple with 50% transparency */
+            position: fixed;
+            left: 0;
+            top: 0;
+            transition: width 0.3s ease;
+            overflow-x: hidden;
+            white-space: nowrap;
+            padding-top: 20px;
+        }
+
+        .sidebar:hover {
+            width: 200px; /* Expands on hover */
+        }
+
+        .sidebar a {
+            padding: 10px 15px;
+            display: block;
+            color: black;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .sidebar a:hover {
+            background: rgba(150, 120, 190, 0.7); /* Slightly darker purple on hover */
+        }
         
     </style>
 </head>
@@ -305,6 +334,13 @@
         <div class="search-wrapper">
             <input type="text" id="gameSearch" class="rainbow-search" placeholder="search games...">
         </div>
+    </div>
+
+        <div class="sidebar">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
     </div>
     
     <div class="icons">
