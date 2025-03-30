@@ -519,31 +519,5 @@
         });
     </script>
 
-        <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            // Create the cursor element
-            const cursorDot = document.createElement("div");
-            cursorDot.classList.add("cursor-dot");
-            document.body.appendChild(cursorDot);
-
-            // Update position instantly on mousemove
-            document.addEventListener("mousemove", (e) => {
-                cursorDot.style.left = `${e.clientX}px`;
-                cursorDot.style.top = `${e.clientY}px`;
-            });
-        });
-    </script>
-
-<script>
-    // Show the first games message
-    setTimeout(function() {
-        showGlowingMessage('most apps dont load because of the server issue');
-
-        // Show the second message after a delay
-        setTimeout(function() {
-            showGlowingMessage('we are working on a faster, and better server but we have to pay more money than i already paid sooo youll have to wait 😭');
-        }, 3000); // Adjust delay as needed
-    }, 1500);
-</script>
 </body>
 </html>
