@@ -1,6 +1,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -656,86 +657,6 @@ body {
             color: #ddd;
         }
 
-    /* Partners Section */
-    .partners-container {
-        width: 100%;
-        text-align: center;
-        padding: 50px 20px;
-        background: inherit; /* Keeps the same background as the rest of the site */
-        margin-top: 100px;
-    }
-
-    .partners-title {
-        font-family: Arial, sans-serif;
-        font-size: 40px;
-        font-weight: bold;
-        color: white;
-        text-shadow: 0 0 15px white;
-        margin-bottom: 10px;
-        text-transform: lowercase;
-        transition: transform 0.3s ease-in-out;
-    }
-
-    .partners-title:hover {
-        transform: scale(1.1);
-    }
-
-    .underline {
-        width: 50%;
-        height: 4px;
-        background-color: white;
-        margin: 0 auto 30px auto;
-        box-shadow: 0 0 10px white;
-        border-radius: 2px;
-    }
-
-    .partners-logos {
-        display: flex;
-        justify-content: center;
-        gap: 40px;
-        flex-wrap: wrap;
-    }
-
-    .rectangle {
-        position: relative;
-        width: 200px;
-        height: 200px;
-        border-radius: 25px;
-        overflow: hidden;
-        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    }
-
-    .rectangle img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 25px;
-        transition: transform 0.3s ease-in-out;
-    }
-
-    .rectangle:hover img {
-        transform: scale(1.1);
-        box-shadow: 0 0 20px white;
-    }
-
-    .game-name {
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        font-size: 24px;
-        opacity: 0;
-        transition: opacity 0.3s ease-in-out;
-        color: white;
-        text-align: left;
-        font-weight: bold;
-        letter-spacing: -0.5px;
-        text-transform: lowercase;
-    }
-
-    .rectangle:hover .game-name {
-        opacity: 1;
-    }
-
 </style>
 
 
@@ -868,32 +789,6 @@ body {
              <img class="phone-static-image" src="https://files.catbox.moe/s2y4rn.png" alt="Game Image">
              <div class="phone-game-name">slice master</div>
         </div>
-    </div>
-</div>
-
-<!-- Partners Section -->
-<div class="partners-container">
-    <h2 class="partners-title">our partners</h2>
-    <div class="underline"></div>
-    <div class="partners-logos">
-        <a href="https://example.com" target="_blank" class="partner">
-            <div class="rectangle">
-                <img src="https://via.placeholder.com/200" alt="Partner 1">
-                <span class="game-name">partner one</span>
-            </div>
-        </a>
-        <a href="https://example.com" target="_blank" class="partner">
-            <div class="rectangle">
-                <img src="https://via.placeholder.com/200" alt="Partner 2">
-                <span class="game-name">partner two</span>
-            </div>
-        </a>
-        <a href="https://example.com" target="_blank" class="partner">
-            <div class="rectangle">
-                <img src="https://via.placeholder.com/200" alt="Partner 3">
-                <span class="game-name">partner three</span>
-            </div>
-        </a>
     </div>
 </div>
 
