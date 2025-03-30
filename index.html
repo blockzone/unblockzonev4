@@ -85,24 +85,46 @@ body {
             gap: 25px;
             width: 100%;
         }
-        .icon-container {
-            width: 100px;
-            height: 120px;
-            background: black;
-            border: 3px solid white;
-            border-radius: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            transform: translateZ(0);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            will-change: transform;
-        }
-        .icon-container:hover {
-            transform: scale(1.1) translateZ(0);
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-        }
+/* Ensure the whole icon-container is clickable */
+.icon-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 120px;
+    background: black;
+    border: 3px solid white;
+    border-radius: 20px;
+    text-decoration: none; /* Remove underline from links */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    will-change: transform;
+}
+
+.icon-container:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+/* Remove the default link colors */
+.icon-container img {
+    width: 60px;
+    height: 60px;
+}
+
+.icon-label {
+    margin-top: 5px;
+    font-size: 14px;
+    color: white;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Remove default link styles */
+.icon-container {
+    text-decoration: none;
+    color: white;
+}
+
         .icon {
             width: 60px;
             height: 60px;
@@ -685,30 +707,31 @@ body {
     <div id="particles-js"></div>
     <div class="coolBlobIdk"></div>
 
-    <div class="title">Unblockzone v4</div>
+    <div class="title">unblockzone v4</div>
 
-        <div class="icons-container">
-        <div class="icon-container">
-            <img class="icon" src="https://static-00.iconduck.com/assets.00/console-controller-icon-2048x2048-pmmusn7m.png" onclick="window.location.href='g.html'">
-            <div class="icon-label">games</div>
-        </div>
-        <div class="icon-container">
-            <img class="icon" src="https://img.icons8.com/ios7/600/FFFFFF/apple-app-store--v2.png" onclick="window.location.href='a.html'">
-            <div class="icon-label">apps</div>
-        </div>
-        <div class="icon-container">
-            <img class="icon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0_6HUhLshuftA_sDchc5pEGqTBPa41EO6Xw&s" onclick="window.location.href='e.html'">
-            <div class="icon-label">exploits</div>
-        </div>
-        <div class="icon-container">
-            <img class="icon" src="https://static-00.iconduck.com/assets.00/film-spool-icon-2048x2048-uk9kbgtd.png" onclick="window.location.href='m.html'">
-            <div class="icon-label">movies</div>
-        </div>
-        <div class="icon-container">
-            <img class="icon" src="https://img.icons8.com/m_rounded/512/FFFFFF/settings.png" onclick="window.location.href='s.html'">
-            <div class="icon-label">settings</div>
-        </div>
-    </div>
+<div class="icons-container">
+    <a href="g.html" class="icon-container">
+        <img class="icon" src="https://static-00.iconduck.com/assets.00/console-controller-icon-2048x2048-pmmusn7m.png">
+        <div class="icon-label">games</div>
+    </a>
+    <a href="a.html" class="icon-container">
+        <img class="icon" src="https://img.icons8.com/ios7/600/FFFFFF/apple-app-store--v2.png">
+        <div class="icon-label">apps</div>
+    </a>
+    <a href="e.html" class="icon-container">
+        <img class="icon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0_6HUhLshuftA_sDchc5pEGqTBPa41EO6Xw&s">
+        <div class="icon-label">exploits</div>
+    </a>
+    <a href="m.html" class="icon-container">
+        <img class="icon" src="https://static-00.iconduck.com/assets.00/film-spool-icon-2048x2048-uk9kbgtd.png">
+        <div class="icon-label">movies</div>
+    </a>
+    <a href="s.html" class="icon-container">
+        <img class="icon" src="https://img.icons8.com/m_rounded/512/FFFFFF/settings.png">
+        <div class="icon-label">settings</div>
+    </a>
+</div>
+
 
     <div class="header">
         <input type="text" class="search-bar" placeholder="search..." onkeydown="handleSearch(event)">
