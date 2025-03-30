@@ -293,8 +293,38 @@
     z-index: 1000; /* Ensure it appears above other content */
 }
 
+/* Add white line on the right edge */
+.sidebar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4px; /* Line thickness */
+    height: 100%; /* Full height of the sidebar */
+    background-color: white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Glowing effect for the line */
+    transition: box-shadow 0.3s ease;
+}
+
+/* Hide all content inside sidebar when collapsed */
+.sidebar .emoji-box,
+.sidebar a {
+    visibility: hidden; /* Make elements invisible when sidebar is collapsed */
+    opacity: 0;
+    transition: visibility 0s 0.3s, opacity 0.3s ease; /* Delay visibility transition */
+}
+
+/* Expand sidebar and show items on hover */
 .sidebar:hover {
     width: 200px; /* Expands on hover */
+}
+
+/* Show all content when sidebar is expanded */
+.sidebar:hover .emoji-box,
+.sidebar:hover a {
+    visibility: visible;
+    opacity: 1; /* Fade in the content when the sidebar is expanded */
+    transition: opacity 0.3s ease, visibility 0s 0s; /* Fade in when sidebar is expanded */
 }
 
 .sidebar a {
@@ -340,18 +370,12 @@
     text-shadow: none;
 }
 
-
 /* Ensuring other elements with round rectangles (e.g., content or buttons) have lower z-index */
 .content {
     position: relative;
     z-index: 500; /* Lower than sidebar */
     margin-left: 50px; /* Space to avoid overlap initially */
 }
-
-
-
-
-
         
     </style>
 </head>
