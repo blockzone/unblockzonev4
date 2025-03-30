@@ -1,0 +1,479 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>io games</title>
+    <link rel="icon" href="https://files.catbox.moe/ao6qv3.png" type="image/png">
+
+    <!-- 100% privacy-first analytics -->
+<script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZN69N4SEF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SZN69N4SEF');
+</script>
+    
+    <!-- Tab Cloaking and Utility Scripts -->
+    <script src="scripts/utilities/tab-cloak.js"></script>
+    <script src="scripts/utilities/emergency-escape.js"></script>
+    <script src="scripts/utilities/theme.js"></script>
+    <script src="scripts/utilities/message-system.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: url('https://img.freepik.com/free-photo/artistic-blurry-colorful-wallpaper-background_58702-8520.jpg?semt=ais_hybrid') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+            position: relative;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+.icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px; /* Increased margin-top to move icons down */
+}
+
+.icon-container {
+    width: 60px;
+    height: 60px;
+    background-color: black;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 0 10px white;
+}
+
+.icon-container:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 20px white;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+        .coolBlobIdk {
+            position: fixed;
+            bottom: -30%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 400px;
+            background: linear-gradient(135deg, rgba(50, 50, 50, 0.8), rgba(200, 200, 200, 0.6));
+            border-radius: 50%;
+            filter: blur(100px);
+            box-shadow: 0 0 120px rgba(200, 200, 200, 0.5);
+        }
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        .title {
+            margin-top: 100px;
+            font-size: 48px;
+            font-weight: bold;
+            text-transform: lowercase;
+            color: white;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+        .title:hover {
+            transform: scale(1.2);
+        }
+        .rectangle-container {
+            display: flex;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .rectangle {
+            width: 400px;
+            height: 250px;
+            background-color: black;
+            border-radius: 15px;
+            box-shadow: 0 0 20px white;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        .rectangle:hover {
+            transform: scale(1.05);
+        }
+        .rectangle img {
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            object-fit: cover;
+            transition: filter 0.3s ease-in-out;
+        }
+        .rectangle:hover img {
+            filter: blur(5px) brightness(0.5);
+        }
+        .game-name {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            color: white;
+            text-align: left;
+            font-weight: bold;
+            letter-spacing: -0.5px;
+            text-transform: lowercase;
+        }
+        .rectangle:hover .game-name {
+            opacity: 1;
+        }
+
+                #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        
+        /* Remove home button styles */
+            
+
+                .popular-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 100px;
+            height: 30px;
+            background-color: #FFA500;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-size: 14px;
+            color: white;
+            font-weight: bold;
+            text-shadow: 0 0 10px white;
+            box-shadow: 0 0 10px #FFA500;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .popular-badge:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px #FFA500;
+        }
+        .sidebar {
+    width: 50px; /* 50 px wide */
+    height: 100vh; /* Full height */
+    background-image: url('https://img.freepik.com/free-photo/artistic-blurry-colorful-wallpaper-background_58702-8520.jpg?semt=ais_hybrid');
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: width 0.3s ease;
+    overflow-x: hidden;
+    white-space: nowrap;
+    padding-top: 20px;
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+/* Add white line on the right edge */
+.sidebar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4px; /* Line thickness */
+    height: 100%; /* Full height of the sidebar */
+    background-color: white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Glowing effect for the line */
+    transition: box-shadow 0.3s ease;
+}
+
+/* Hide all content inside sidebar when collapsed */
+.sidebar .emoji-box,
+.sidebar a {
+    visibility: hidden; /* Make elements invisible when sidebar is collapsed */
+    opacity: 0;
+    transition: visibility 0s 0.3s, opacity 0.3s ease; /* Delay visibility transition */
+}
+
+/* Expand sidebar and show items on hover */
+.sidebar:hover {
+    width: 200px; /* Expands on hover */
+}
+
+/* Show all content when sidebar is expanded */
+.sidebar:hover .emoji-box,
+.sidebar:hover a {
+    visibility: visible;
+    opacity: 1; /* Fade in the content when the sidebar is expanded */
+    transition: opacity 0.3s ease, visibility 0s 0s; /* Fade in when sidebar is expanded */
+}
+
+.sidebar a {
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease, transform 0.2s ease;
+    overflow: hidden;
+}
+
+/* White background with smooth slide effect */
+.sidebar a::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+    opacity: 0;
+    transform: translateY(-50%) scaleX(0.8);
+    transition: left 0.4s ease-out, opacity 0.3s ease-out, transform 0.4s ease-out;
+    z-index: -1;
+}
+
+/* Hover effect: smooth slide in */
+.sidebar a:hover::before {
+    left: 0;
+    opacity: 1;
+    transform: translateY(-50%) scaleX(1);
+}
+
+/* Subtle text transition */
+.sidebar a:hover {
+    color: black;
+    transform: scale(1.05);
+    text-shadow: none;
+}
+
+/* Ensuring other elements with round rectangles (e.g., content or buttons) have lower z-index */
+.content {
+    position: relative;
+    z-index: 500; /* Lower than sidebar */
+    margin-left: 50px; /* Space to avoid overlap initially */
+}
+
+
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div class="coolBlobIdk"></div>
+    <div class="title">io games</div>
+    
+    <div class="icons">
+        <a href="/index.html" onclick="event.preventDefault(); window.location.href='/index.html';" class="icon-container"><img src="https://img.icons8.com/ios-filled/50/FFFFFF/home.png" alt="Home" class="icon"></a>
+        <a href="/g.html" onclick="event.preventDefault(); window.location.href='/g.html';" class="icon-container"><img src="https://static-00.iconduck.com/assets.00/console-controller-icon-2048x2048-pmmusn7m.png" alt="Games" class="icon"></a>
+        <a href="/a.html" onclick="event.preventDefault(); window.location.href='/a.html';" class="icon-container"><img src="https://img.icons8.com/ios7/600/FFFFFF/apple-app-store--v2.png" alt="Apps" class="icon"></a>
+        <a href="/e.html" onclick="event.preventDefault(); window.location.href='/e.html';" class="icon-container"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0_6HUhLshuftA_sDchc5pEGqTBPa41EO6Xw&s" alt="Exploits" class="icon"></a>
+        <a href="/m.html" onclick="event.preventDefault(); window.location.href='/m.html';" class="icon-container"><img src="https://static-00.iconduck.com/assets.00/film-spool-icon-2048x2048-uk9kbgtd.png" alt="Movies" class="icon"></a>
+        <a href="/s.html" onclick="event.preventDefault(); window.location.href='/s.html';" class="icon-container"><img src="https://img.icons8.com/m_rounded/512/FFFFFF/settings.png" alt="Settings" class="icon"></a>
+    </div>
+
+        <div class="sidebar">
+        <a href="/popular.html"><span class="emoji-box">🔥</span> <span>| popular</span></a>
+        <a href="/new-games.html"><span class="emoji-box">🎮</span> <span>| new games</span></a>
+        <a href="/updated.html"><span class="emoji-box">📍</span> <span>| updated</span></a>
+        <a href="/multiplayer.html"><span class="emoji-box">🕹</span> <span>| multiplayer</span></a>
+        <a href="/horror.html"><span class="emoji-box">👻</span> <span>| horror</span></a>
+        <a href="/io-games.html"><span class="emoji-box">⚡</span> <span>| io games</span></a>
+        <a href="/coming-soon.html"><span class="emoji-box">👀</span> <span>| coming soon</span></a>
+    </div>
+    
+     <div class="rectangle-container">
+        <div class="rectangle" onclick="window.location.href='/g/bloxd-io.html'">
+            <img src="https://i.ytimg.com/vi/FoqKB4ogm4k/maxresdefault.jpg" alt="Image 2">
+            <div class="game-name">bloxd.io</div>
+        </div>
+        <div class="rectangle" onclick="window.location.href='/g/smash-karts-io.html'">
+            <img src="https://i.ytimg.com/vi/BK__rAEEJ-w/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGCsgZSgZMA8=&rs=AOn4CLCTggh82m9HsYmzxjf1xstnOBffcA" alt="Image 2">
+            <div class="game-name">smashkarts.io</div>
+        </div>
+        <div class="rectangle" onclick="window.location.href='/g/paper-io-3d.html'">
+            <img src="https://files.catbox.moe/x2lvx0.png" alt="Image 2">
+            <div class="game-name">paper.io 3d</div>
+        </div>
+    </div>
+     <div class="rectangle-container">
+        <div class="rectangle" onclick="window.location.href='/g/ragdoll-io.html'">
+            <img src="https://files.catbox.moe/2vqace.png" alt="Image 2">
+            <div class="game-name">ragdoll.io</div>
+        </div>
+        <div class="rectangle" onclick="window.location.href='/g/snowball-io.html'">
+            <img src="https://play-lh.googleusercontent.com/bVYC5zsBjJf-ztbarWeOp4-qTlL4h0I3ajJoCYq8xXcG1ovafqZ2steRipRK45dJTA=w526-h296-rw" alt="Image 2">
+            <div class="game-name">snowball.io</div>
+        </div>
+        <div class="rectangle" onclick="window.location.href='/g/slither-io.html'">
+            <img src="https://files.catbox.moe/jz2zkq.png" alt="Image 2">
+            <div class="game-name">slither.io</div>
+        </div>
+    </div>
+    <div class="rectangle-container">
+        <div class="rectangle" onclick="window.location.href='/g/hole-io.html'">
+            <img src="https://lh3.googleusercontent.com/kdoWsI9fctfXqwInmRRn57jqohctanZvPrGIQIPxh-JPcMlK-U2Q3WgOJV2uHj0io1avUi2UTE_7mfFsjqjgT9xI=s1280-w1280-h800" alt="Image 2">
+            <div class="game-name">hole.io</div>
+        </div>
+        <div class="rectangle" onclick="window.location.href='/g/shell-shockers.html'">
+            <img src="https://staticg.sportskeeda.com/editor/2024/10/783ff-17280361172197-1920.jpg?w=640" alt="Image 2">
+            <div class="game-name">shell shockers</div>
+        </div>
+        <div class="rectangle" onclick="window.location.href='/g/paper-io-2.html'">
+            <img src="https://tcf.admeen.org/game/17500/17069/400x246/paper-io-2.webp" alt="Image 2">
+            <div class="game-name">paper.io 2</div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Initialize particles with theme colors
+        document.addEventListener('DOMContentLoaded', function() {
+            const theme = window.getCurrentTheme ? window.getCurrentTheme() : {
+                particleColor: "#ffffff",
+                particleLinks: "#ffffff"
+            };
+            
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Initialize particles with theme colors
+        document.addEventListener('DOMContentLoaded', function() {
+            const theme = window.getCurrentTheme ? window.getCurrentTheme() : {
+                particleColor: "#aaa",
+                particleLinks: "#aaa"
+            };
+            
+            particlesJS("particles-js", {
+                particles: {
+                    number: { value: 20, density: { enable: false } },
+                    color: { value: theme.particleColor },
+                    shape: { type: "circle" },
+                    opacity: { value: 0.5, random: true },
+                    size: { value: 3, random: true },
+                    line_linked: {
+                        enable: true,
+                        distance: 150,
+                        color: theme.particleLinks,
+                        opacity: 0.4,
+                        width: 1
+                    },
+                    move: { 
+                        enable: true, 
+                        speed: 2, 
+                        direction: "none",
+                        random: true,
+                        straight: false,
+                        out_mode: "out",
+                        bounce: false
+                    }
+                },
+                interactivity: {
+                    detect_on: "canvas",
+                    events: { 
+                        onhover: { enable: false },
+                        onclick: { enable: false },
+                        resize: true 
+                    }
+                },
+                retina_detect: false
+            });
+        });
+    </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8PERVFVWRG"></script>
+    
+    <script src="scripts/utilities/shared.js"></script>
+    <script>
+        // Apps page specific code
+        
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Initialize particles with theme colors
+        document.addEventListener('DOMContentLoaded', function() {
+            const theme = window.getCurrentTheme ? window.getCurrentTheme() : {
+                particleColor: "#ffffff",
+                particleLinks: "#ffffff"
+            };
+            
+            // Initialize particles
+            particlesJS("particles-js", {
+                "particles": {
+                    "number": { "value": 20, "density": { "enable": false } },
+                    "color": { "value": theme.particleColor || "#ffffff" },
+                    "shape": { "type": "circle" },
+                    "opacity": { "value": 0.7, "random": true },
+                    "size": { "value": 3, "random": true },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": theme.particleLinks || "#ffffff",
+                        "opacity": 0.6,
+                        "width": 1
+                    },
+                    "move": { 
+                        "enable": true, 
+                        "speed": 2, 
+                        "direction": "none",
+                        "random": true,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": { 
+                        "onhover": { "enable": false },
+                        "onclick": { "enable": false },
+                        "resize": true 
+                    }
+                },
+                "retina_detect": false
+            });
+        });
+    </script>
+    <script src="scripts/utilities/shared.js"></script>
+    <script>
+  
+</body>
+</html>
