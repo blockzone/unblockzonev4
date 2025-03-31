@@ -162,20 +162,24 @@ body {
 
         .title {
             position: absolute;
-            top: 25%; 
+            top: 25%;
             left: 50%;
             transform: translateX(-50%);
             font-size: 48px;
             font-weight: bold;
+            font-family: Arial, sans-serif;
             text-transform: lowercase;
             color: white;
             text-align: center;
-            transition: transform 0.3s ease-in-out;
-            text-shadow: none;
+            transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+            text-shadow: 0 0 10px white, 0 0 20px purple, 0 0 30px purple;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid white;
         }
-
         .title:hover {
-            transform: translateX(-50%) scale(1.1);
+            transform: translateX(-50%) scale(1.2);
+            text-shadow: 0 0 15px white, 0 0 25px purple, 0 0 35px purple;
         }
 
         .header {
@@ -774,6 +778,8 @@ body {
 
     <div class="title">unblockzone v4</div>
 
+        <div class="title" id="typing"></div>
+
 <div class="icons-container">
     <a href="/g.html" class="icon-container">
         <img class="icon" src="https://static-00.iconduck.com/assets.00/console-controller-icon-2048x2048-pmmusn7m.png">
@@ -1010,6 +1016,38 @@ body {
 
         // Show the popup after 1 second
         setTimeout(showPopup, 1000);
+    </script>
+
+        <script>
+        const phrases = ["unblockzone v4", "play games freely", "bypass restrictions", "enjoy seamless gaming"];
+        let i = 0;
+        let j = 0;
+        let currentPhrase = "";
+        let isDeleting = false;
+        const speed = 100;
+        const eraseSpeed = 50;
+        const delayBetweenPhrases = 1500;
+        const typingElement = document.getElementById("typing");
+
+        function type() {
+            currentPhrase = phrases[i];
+            if (isDeleting) {
+                j--;
+            } else {
+                j++;
+            }
+            typingElement.textContent = currentPhrase.substring(0, j);
+
+            if (!isDeleting && j === currentPhrase.length) {
+                setTimeout(() => isDeleting = true, delayBetweenPhrases);
+            } else if (isDeleting && j === 0) {
+                isDeleting = false;
+                i = (i + 1) % phrases.length;
+            }
+            setTimeout(type, isDeleting ? eraseSpeed : speed);
+        }
+        
+        type();
     </script>
     
     <script>
