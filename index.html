@@ -498,73 +498,32 @@ body {
         height: auto;
     }
 }
+                /* Text at the bottom left */
+        .bottom-text {
+            position: fixed;
+            left: 15px;
+            bottom: 20px;
+            font-size: 20px; /* Small text */
+            font-weight: bold;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 1); /* Glowing effect */
+            transition: transform 0.2s ease, opacity 0.3s ease;
+            cursor: pointer;
+        }
 
-        /* Text at the bottom right */
-.bottom-text {
-    position: fixed;
-    right: 20px; /* Move to the right */
-    bottom: 20px;
-    font-size: 20px; /* Small text */
-    font-weight: bold;
-    color: white;
-    font-family: Arial, sans-serif;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 1); /* Glowing effect */
-    transition: transform 0.2s ease, opacity 0.3s ease;
-    cursor: pointer;
-}
+        .bottom-text:hover {
+            transform: scale(1.1); /* Zoom effect on click */
+        }
 
-.bottom-text:hover {
-    transform: scale(1.1); /* Zoom effect on hover */
-}
+        /* Hide the text when scrolling down */
+        .hidden {
+            opacity: 0;
+        }
 
-/* Hide the text when scrolling down */
-.hidden {
-    opacity: 0;
-}
-
-.visible {
-    opacity: 1;
-}
-
-/* Mobile link moved to the right with a gradient background */
-.mobile-link {
-    position: fixed;
-    bottom: 10px;
-    right: 10px; /* Positioned at the bottom right */
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-    font-style: italic;
-    font-size: 12px;
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    padding: 10px 15px;
-    border-radius: 20px;
-    
-    /* Background: Light grey 50% transparent */
-    background-color: rgba(200, 200, 200, 0.5); 
-    
-    /* Border for better visibility */
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    
-    /* Shadow to make it pop */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    
-    /* Smooth transition effect */
-    transition: background 0.3s, box-shadow 0.3s;
-}
-
-/* Hover effect for better interaction */
-.mobile-link:hover {
-    background-color: rgba(200, 200, 200, 0.7); /* Slightly less transparent */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-}
-
-
-
-
-                <a href="/mobile.html" target="_blank" class="mobile-link">Mobile</a>
-
+        .visible {
+            opacity: 1;
+        }
 
 /* Optional: Landscape iPad specific styles (max height 768px) */
 @media only screen and (max-width: 768px) {
@@ -648,8 +607,21 @@ body {
     opacity: 1;
 }
 
-<style>
+        <a href="/mobile.html" target="_blank" class="mobile-link">Mobile</a>
 
+<style>
+    .mobile-link {
+        position: fixed;
+        bottom: 10px;
+        left: 10px;
+        font-family: Arial, sans-serif;
+        font-weight: bold;
+        font-style: italic;
+        font-size: 12px;
+        color: white;
+        text-decoration: underline;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    }
 
                         /* Popup Container */
         .popup {
