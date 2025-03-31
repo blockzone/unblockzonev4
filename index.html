@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -498,51 +497,7 @@ body {
         height: auto;
     }
 }
-/* Text at the bottom right */
-.bottom-text {
-    position: fixed;
-    right: 20px; /* Move to the right */
-    bottom: 20px;
-    font-size: 20px; /* Small text */
-    font-weight: bold;
-    color: white;
-    font-family: Arial, sans-serif;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 1); /* Glowing effect */
-    transition: transform 0.2s ease, opacity 0.3s ease;
-    cursor: pointer;
-}
-
-.bottom-text:hover {
-    transform: scale(1.1); /* Zoom effect on hover */
-}
-
-/* Hide the text when scrolling down */
-.hidden {
-    opacity: 0;
-}
-
-.visible {
-    opacity: 1;
-}
-
-/* Mobile link moved to the right */
-.mobile-link {
-    position: fixed;
-    bottom: 10px;
-    right: 10px; /* Move to the right */
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-    font-style: italic;
-    font-size: 12px;
-    color: white;
-    text-decoration: underline;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-}
-
-
         
-        <a href="/mobile.html" target="_blank" class="mobile-link">Mobile</a>
-
 /* Optional: Landscape iPad specific styles (max height 768px) */
 @media only screen and (max-width: 768px) {
     body {
@@ -625,8 +580,6 @@ body {
     opacity: 1;
 }
 
-<style>
-
                         /* Popup Container */
         .popup {
             position: fixed;
@@ -679,6 +632,106 @@ body {
         .close-btn:hover {
             color: #ddd;
         }
+
+        .sidebar {
+    width: 50px; /* 50 px wide */
+    height: 100vh; /* Full height */
+    background-image: url('https://img.freepik.com/free-photo/artistic-blurry-colorful-wallpaper-background_58702-8520.jpg?semt=ais_hybrid');
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: width 0.3s ease;
+    overflow-x: hidden;
+    white-space: nowrap;
+    padding-top: 20px;
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+/* Add white line on the right edge */
+.sidebar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4px; /* Line thickness */
+    height: 100%; /* Full height of the sidebar */
+    background-color: white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Glowing effect for the line */
+    transition: box-shadow 0.3s ease;
+}
+
+/* Hide all content inside sidebar when collapsed */
+.sidebar .emoji-box,
+.sidebar a {
+    visibility: hidden; /* Make elements invisible when sidebar is collapsed */
+    opacity: 0;
+    transition: visibility 0s 0.3s, opacity 0.3s ease; /* Delay visibility transition */
+}
+
+/* Expand sidebar and show items on hover */
+.sidebar:hover {
+    width: 200px; /* Expands on hover */
+}
+
+/* Show all content when sidebar is expanded */
+.sidebar:hover .emoji-box,
+.sidebar:hover a {
+    visibility: visible;
+    opacity: 1; /* Fade in the content when the sidebar is expanded */
+    transition: opacity 0.3s ease, visibility 0s 0s; /* Fade in when sidebar is expanded */
+}
+
+.sidebar a {
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease, transform 0.2s ease;
+    overflow: hidden;
+}
+
+/* White background with smooth slide effect */
+.sidebar a::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+    opacity: 0;
+    transform: translateY(-50%) scaleX(0.8);
+    transition: left 0.4s ease-out, opacity 0.3s ease-out, transform 0.4s ease-out;
+    z-index: -1;
+}
+
+/* Hover effect: smooth slide in */
+.sidebar a:hover::before {
+    left: 0;
+    opacity: 1;
+    transform: translateY(-50%) scaleX(1);
+}
+
+/* Subtle text transition */
+.sidebar a:hover {
+    color: black;
+    transform: scale(1.05);
+    text-shadow: none;
+}
+
+/* Ensuring other elements with round rectangles (e.g., content or buttons) have lower z-index */
+.content {
+    position: relative;
+    z-index: 500; /* Lower than sidebar */
+    margin-left: 50px; /* Space to avoid overlap initially */
+}
 
 </style>
 
@@ -743,6 +796,18 @@ body {
         <div class="icon-label">settings</div>
     </a>
 </div>
+
+        <div class="sidebar">
+        <a href="/index.html"><span class="emoji-box">🏠</span> <span>| home</span></a>
+        <a href="/g.html"><span class="emoji-box">🎮</span> <span>| games</span></a>
+        <a href="/a.html"><span class="emoji-box">⚡</span> <span>| apps</span></a>
+        <a href="/e.html"><span class="emoji-box">🔒</span> <span>| exploits</span></a>
+        <a href="/m.html"><span class="emoji-box">🎥</span> <span>| movies</span></a>
+        <a href="/s.html"><span class="emoji-box">🔷</span> <span>| settings</span></a>
+        <a href="/contact.html"><span class="emoji-box">📞</span> <span>| contact</span></a>
+        <a href="/windows.html"><span class="emoji-box">🖥</span> <span>| windows</span></a>
+        <a href="/mobile.html"><span class="emoji-box">📱</span> <span>| mobile</span></a>
+    </div>
 
 
     <div class="header">
