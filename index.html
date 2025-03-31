@@ -41,7 +41,8 @@ body {
     background-size: 400% 400%;
     animation: moveGradient 20s infinite alternate ease-in-out;
 }
-        /* Icon container for smooth shine effect */
+
+                /* Icon container for smooth shine effect */
 .icon-container {
     position: relative;
     overflow: hidden;
@@ -71,8 +72,22 @@ body {
 .icon-container:hover::before {
     left: 100%;
 }
-
-    
+        
+        .icon-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            transition: transform 0.3s ease-in-out, opacity 0.5s ease-in-out;
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+        .icon-container.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .icon-container:hover {
+            transform: scale(1.1);
+        }
         .icons-container {
             position: absolute;
             top: 40%;
@@ -180,6 +195,16 @@ body {
         .title:hover {
             transform: translateX(-50%) scale(1.2);
             text-shadow: 0 0 15px white, 0 0 25px purple, 0 0 35px purple;
+        }
+        .typing::after {
+            content: '|';
+            display: inline-block;
+            animation: blink 0.7s steps(2, start) infinite;
+        }
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
         }
 
         .header {
@@ -781,30 +806,15 @@ body {
     <div id="particles-js"></div>
     <div class="coolBlobIdk"></div>
 
-        <div class="title" id="typing"></div>
+    <div class="title"><span class="typing" id="typing"></span></div>
 
-<div class="icons-container">
-    <a href="/g.html" class="icon-container">
-        <img class="icon" src="https://static-00.iconduck.com/assets.00/console-controller-icon-2048x2048-pmmusn7m.png">
-        <div class="icon-label">games</div>
-    </a>
-    <a href="/a.html" class="icon-container">
-        <img class="icon" src="https://img.icons8.com/ios7/600/FFFFFF/apple-app-store--v2.png">
-        <div class="icon-label">apps</div>
-    </a>
-    <a href="/e.html" class="icon-container">
-        <img class="icon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0_6HUhLshuftA_sDchc5pEGqTBPa41EO6Xw&s">
-        <div class="icon-label">exploits</div>
-    </a>
-    <a href="/m.html" class="icon-container">
-        <img class="icon" src="https://static-00.iconduck.com/assets.00/film-spool-icon-2048x2048-uk9kbgtd.png">
-        <div class="icon-label">movies</div>
-    </a>
-    <a href="/s.html" class="icon-container">
-        <img class="icon" src="https://img.icons8.com/m_rounded/512/FFFFFF/settings.png">
-        <div class="icon-label">settings</div>
-    </a>
-</div>
+    <div class="icons-container">
+        <a href="/g.html" class="icon-container"><img class="icon" src="https://static-00.iconduck.com/assets.00/console-controller-icon-2048x2048-pmmusn7m.png"><div class="icon-label">games</div></a>
+        <a href="/a.html" class="icon-container"><img class="icon" src="https://img.icons8.com/ios7/600/FFFFFF/apple-app-store--v2.png"><div class="icon-label">apps</div></a>
+        <a href="/e.html" class="icon-container"><img class="icon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0_6HUhLshuftA_sDchc5pEGqTBPa41EO6Xw&s"><div class="icon-label">exploits</div></a>
+        <a href="/m.html" class="icon-container"><img class="icon" src="https://static-00.iconduck.com/assets.00/film-spool-icon-2048x2048-uk9kbgtd.png"><div class="icon-label">movies</div></a>
+        <a href="/s.html" class="icon-container"><img class="icon" src="https://img.icons8.com/m_rounded/512/FFFFFF/settings.png"><div class="icon-label">settings</div></a>
+    </div>
 
         <div class="sidebar">
         <a href="/index.html"><span class="emoji-box">🏠</span> <span>| home</span></a>
@@ -1021,44 +1031,34 @@ body {
         setTimeout(showPopup, 1000);
     </script>
 
-        <script>
-        const phrases = ["unblockzone v4", "play games freely...", "bypass restrictions...", "enjoy seamless gaming..."];
-        let i = 0;
-        let j = 0;
-        let currentPhrase = "";
-        let isDeleting = false;
-        const speed = 100;
-        const eraseSpeed = 50;
-        const delayBetweenPhrases = 1500;
-        const typingElement = document.getElementById("typing");
-
-        function type() {
-            currentPhrase = phrases[i];
-            if (isDeleting) {
-                j--;
-            } else {
-                j++;
-            }
-            typingElement.textContent = currentPhrase.substring(0, j);
-
-            if (!isDeleting && j === currentPhrase.length) {
-                setTimeout(() => isDeleting = true, delayBetweenPhrases);
-            } else if (isDeleting && j === 0) {
-                isDeleting = false;
-                i = (i + 1) % phrases.length;
-            }
-            setTimeout(type, isDeleting ? eraseSpeed : speed);
-        }
-        
-        type();
-    </script>
-
          <script>
         window.addEventListener("load", () => {
             setTimeout(() => {
                 document.getElementById("searchBar").classList.add("active");
             }, 300);
         });
+    </script>
+
+    <script>
+        const text = "unblockzone v4";
+        let i = 0;
+        function type() {
+            if (i < text.length) {
+                document.getElementById("typing").textContent += text.charAt(i);
+                i++;
+                setTimeout(type, 100);
+            } else {
+                document.getElementById("typing").classList.remove("typing");
+            }
+        }
+        window.onload = () => {
+            setTimeout(type, 500);
+            document.querySelectorAll('.icon-container').forEach((icon, index) => {
+                setTimeout(() => {
+                    icon.classList.add('show');
+                }, index * 150);
+            });
+        };
     </script>
     
     <script>
