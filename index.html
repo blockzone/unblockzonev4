@@ -211,7 +211,7 @@ body {
             position: absolute;
             top: 70%;
             left: 50%;
-            transform: translateX(-50%) translateY(20px);
+            transform: translateX(-50%);
             width: 80%;
             height: 60px;
             background: black;
@@ -220,9 +220,8 @@ body {
             display: flex;
             align-items: center;
             padding: 0 15px;
-            opacity: 0;
-            transition: transform 0.5s ease-out, opacity 0.5s ease-out;
         }
+
         .search-bar {
             width: 100%;
             background: transparent;
@@ -231,6 +230,7 @@ body {
             color: white;
             font-size: 18px;
         }
+        
         .header.active {
             transform: translateX(-50%) translateY(0);
             opacity: 1;
@@ -829,8 +829,8 @@ body {
     </div>
 
 
-    <div class="header" id="searchBar">
-        <input type="text" class="search-bar" placeholder="search...">
+    <div class="header">
+        <input type="text" class="search-bar" placeholder="search..." onkeydown="handleSearch(event)">
     </div>
 
         <!-- Popup -->
