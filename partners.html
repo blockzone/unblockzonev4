@@ -116,52 +116,38 @@
             gap: 20px;
             margin-top: 40px;
         }
- .rectangle {
-    width: 400px;
-    height: 250px;
+        
+.rectangle {
+    width: 250px; /* Make them square */
+    height: 250px; /* Make them square */
     background-color: black;
-    border-radius: 15px;
+    border-radius: 25px; /* More rounded */
     box-shadow: 0 0 20px white;
     position: relative;
     overflow: hidden;
     cursor: pointer;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .rectangle:hover {
-    transform: scale(1.05);
+    transform: scale(1.1); /* Increased zoom effect */
+    box-shadow: 0 0 30px white;
 }
 
 .rectangle img {
     width: 100%;
     height: 100%;
-    border-radius: 15px;
+    border-radius: 25px; /* Matches the container */
     object-fit: cover;
     transition: filter 0.3s ease-in-out;
 }
 
 /* Apply dimming and blurring effect on hover */
 .rectangle:hover img {
-    filter: blur(5px) brightness(0.5);
+    filter: blur(3px) brightness(0.5);
 }
 
 
-                .game-name {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            font-size: 24px;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-            color: white;
-            text-align: left;
-            font-weight: bold;
-            letter-spacing: -0.5px;
-            text-transform: lowercase;
-        }
-        .rectangle:hover .game-name {
-            opacity: 1;
-        }
         .new-badge {
             position: absolute;
             top: 10px;
@@ -185,23 +171,6 @@
             transform: scale(1.1);
             box-shadow: 0 0 20px #28a745;
         }
-
-                /* Hide the default cursor */
-        body {
-            cursor: none;
-        }
-
-        /* Custom glowing cursor */
-        .cursor-dot {
-            position: fixed;
-            width: 12px;
-            height: 12px;
-            background-color: white;
-            border-radius: 50%;
-            pointer-events: none;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
-            transform: translate(-50%, -50%);
-        }
         
         /* Remove home button styles */
             
@@ -221,16 +190,13 @@
     </div>
     <div class="rectangle-container">
         <div class="rectangle" onclick="window.location.href='https://flage.site/'">
-            <img src="https://files.catbox.moe/y7dipq.png" alt="Image 2">
-                      <div class="game-name">camouflage</div>
+            <img src="https://media1.thehungryjpeg.com/thumbs2/ori_3750585_15lt7mch2uktte5uqypcg8g8g39xf3pubhp2eme0_camouflage-pattern-background-virtual-background-for-zoom.jpg" alt="Image 2">
         </div>
         <div class="rectangle" onclick="window.location.href='https://petezahgames.com/'">
-            <img src="https://files.catbox.moe/0wy2fv.png" alt="Image 2">
-                      <div class="game-name">petezah</div>
+            <img src="https://files.catbox.moe/iw7l31.webp" alt="Image 2">
         </div>
         <div class="rectangle" onclick="window.location.href='https://sunnysgym.pages.dev/'">
             <img src="https://files.catbox.moe/yl0jcp.png" alt="Image 2">
-                      <div class="game-name">sunnys gym</div>
                  </div>
              </div>
 
@@ -249,21 +215,6 @@
             "interactivity": {
                 "events": { "onhover": { "enable": false } }
             }
-        });
-    </script>
-
-        <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            // Create the cursor element
-            const cursorDot = document.createElement("div");
-            cursorDot.classList.add("cursor-dot");
-            document.body.appendChild(cursorDot);
-
-            // Update position instantly on mousemove
-            document.addEventListener("mousemove", (e) => {
-                cursorDot.style.left = `${e.clientX}px`;
-                cursorDot.style.top = `${e.clientY}px`;
-            });
         });
     </script>
     
