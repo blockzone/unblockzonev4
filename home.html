@@ -247,6 +247,35 @@ body {
             opacity: 1;
         }
 
+                .quick-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .link {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .link img {
+            width: 60%;
+            height: 60%;
+            border-radius: 50%;
+        }
+
+        .link:hover {
+            transform: scale(1.2);
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.8);
+        }
+
         /* Base styles */
 body {
     font-family: Arial, sans-serif;
@@ -922,6 +951,18 @@ body {
         </div>
     </div>
 </div>
+
+        <div class="quick-links">
+        <a href="https://www.google.com" class="link" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google">
+        </a>
+        <a href="https://duckduckgo.com" class="link" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/en/9/90/DuckDuckGo_logo.png" alt="DuckDuckGo">
+        </a>
+        <a href="https://easyfun.gg" class="link" target="_blank">
+            <img src="https://via.placeholder.com/60" alt="EasyFun GG">
+        </a>
+    </div>
 
 
  <div class="particles" style->
