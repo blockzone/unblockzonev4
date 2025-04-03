@@ -954,43 +954,67 @@ body {
                 titleElement.style.textShadow = `0 0 15px rgba(${theme.lightColor || "255, 255, 255"}, 0.9)`;
             }
             
-            // Initialize particles
-            particlesJS("particles-js", {
-                "particles": {
-                    "number": { "value": 20, "density": { "enable": false } },
-                    "color": { "value": theme.particleColor || "#ffffff" },
-                    "shape": { "type": "circle" },
-                    "opacity": { "value": 0.7, "random": true },
-                    "size": { "value": 3, "random": true },
-                    "line_linked": {
+   <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 60,  /* Fewer dots */
+                    "density": {
                         "enable": true,
-                        "distance": 150,
-                        "color": theme.particleLinks || "#ffffff",
-                        "opacity": 0.6,
-                        "width": 1
+                        "value_area": 1000
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"  
+                },
+                "shape": {
+                    "type": "circle"
+                },
+                "opacity": {
+                    "value": 0.7,
+                    "random": true
+                },
+                "size": {
+                    "value": 5,  /* Medium-sized dots */
+                    "random": true
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2, /* Slower for smooth movement */
+                    "direction": "none",
+                    "random": true,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false
+                },
+                "line_linked": {
+                    "enable": false 
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"  /* Dots move away on hover */
                     },
-                    "move": { 
-                        "enable": true, 
-                        "speed": 2, 
-                        "direction": "none",
-                        "random": true,
-                        "straight": false,
-                        "out_mode": "out",
-                        "bounce": false
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"  /* Clicking adds more dots */
                     }
                 },
-                "interactivity": {
-                    "detect_on": "canvas",
-                    "events": { 
-                        "onhover": { "enable": false },
-                        "onclick": { "enable": false },
-                        "resize": true 
+                "modes": {
+                    "repulse": {
+                        "distance": 100,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 3
                     }
-                },
-                "retina_detect": false
-            });
+                }
+            },
+            "retina_detect": true
         });
-    </script>
 
 
     <script>
