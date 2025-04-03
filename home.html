@@ -954,67 +954,43 @@ body {
                 titleElement.style.textShadow = `0 0 15px rgba(${theme.lightColor || "255, 255, 255"}, 0.9)`;
             }
             
-   <script>
-        particlesJS("particles-js", {
-            "particles": {
-                "number": {
-                    "value": 60,  /* Fewer dots */
-                    "density": {
+            // Initialize particles
+            particlesJS("particles-js", {
+                "particles": {
+                    "number": { "value": 20, "density": { "enable": false } },
+                    "color": { "value": theme.particleColor || "#ffffff" },
+                    "shape": { "type": "circle" },
+                    "opacity": { "value": 0.7, "random": true },
+                    "size": { "value": 3, "random": true },
+                    "line_linked": {
                         "enable": true,
-                        "value_area": 1000
-                    }
-                },
-                "color": {
-                    "value": "#ffffff"  
-                },
-                "shape": {
-                    "type": "circle"
-                },
-                "opacity": {
-                    "value": 0.7,
-                    "random": true
-                },
-                "size": {
-                    "value": 5,  /* Medium-sized dots */
-                    "random": true
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 2, /* Slower for smooth movement */
-                    "direction": "none",
-                    "random": true,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false
-                },
-                "line_linked": {
-                    "enable": false 
-                }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": {
-                        "enable": true,
-                        "mode": "repulse"  /* Dots move away on hover */
+                        "distance": 150,
+                        "color": theme.particleLinks || "#ffffff",
+                        "opacity": 0.6,
+                        "width": 1
                     },
-                    "onclick": {
-                        "enable": true,
-                        "mode": "push"  /* Clicking adds more dots */
+                    "move": { 
+                        "enable": true, 
+                        "speed": 2, 
+                        "direction": "none",
+                        "random": true,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false
                     }
                 },
-                "modes": {
-                    "repulse": {
-                        "distance": 100,
-                        "duration": 0.4
-                    },
-                    "push": {
-                        "particles_nb": 3
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": { 
+                        "onhover": { "enable": false },
+                        "onclick": { "enable": false },
+                        "resize": true 
                     }
-                }
-            },
-            "retina_detect": true
+                },
+                "retina_detect": false
+            });
         });
+    </script>
 
 
     <script>
