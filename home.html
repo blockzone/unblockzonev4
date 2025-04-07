@@ -684,9 +684,7 @@ body {
   left: 0;
   height: 100vh;
   width: 60px;
-  background: linear-gradient(-45deg, #5a00cc, #4b00ff, #7700ff, #5a00cc);
-  background-size: 600% 600%;
-  animation: gradientBG 10s ease infinite;
+  background: url('https://img.freepik.com/free-photo/artistic-blurry-colorful-wallpaper-background_58702-8520.jpg?semt=ais_hybrid') no-repeat center center/cover;
   transition: width 0.4s ease;
   overflow: hidden;
   z-index: 999;
@@ -694,6 +692,8 @@ body {
   flex-direction: column;
   justify-content: space-between;
   padding: 10px 0;
+  backdrop-filter: blur(4px);
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .sidebar:hover {
@@ -855,16 +855,16 @@ body {
 
 <div class="sidebar">
   <div class="nav-links">
-    <a href="/index.html"><img src="https://img.icons8.com/m_sharp/200/FFFFFF/home.png"><span>Home</span></a>
-    <a href="/g.html"><img src="https://static-00.iconduck.com/assets.00/console-controller-icon-2048x2048-pmmusn7m.png"><span>Games</span></a>
-    <a href="/a.html"><img src="https://img.icons8.com/ios7/600/FFFFFF/apple-app-store--v2.png"><span>Apps</span></a>
-    <a href="/e.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0_6HUhLshuftA_sDchc5pEGqTBPa41EO6Xw&s"><span>Exploits</span></a>
-    <a href="/m.html"><img src="https://static-00.iconduck.com/assets.00/film-spool-icon-2048x2048-uk9kbgtd.png"><span>Movies</span></a>
-    <a href="/s.html"><img src="https://img.icons8.com/m_rounded/512/FFFFFF/settings.png"><span>Settings</span></a>
-    <a href="/contact.html"><img src="https://img.icons8.com/ios_filled/512/FFFFFF/apple-phone.png"><span>Contact</span></a>
-    <a href="/windows.html"><img src="https://img.icons8.com/ios_filled/512/FFFFFF/windows-10.png"><span>Windows</span></a>
-    <a href="/mobile.html"><img src="https://openclipart.org/image/800px/216528"><span>Mobile</span></a>
-    <a href="/partners.html"><img src="https://png.pngtree.com/png-vector/20190330/ourlarge/pngtree-vector-handshake-icon-png-image_894807.jpg"><span>Partners</span></a>
+    <a href="/index.html"><img src="https://img.icons8.com/m_sharp/200/FFFFFF/home.png"><span>home</span></a>
+    <a href="/g.html"><img src="https://files.catbox.moe/g7hy7r.png"><span>games</span></a>
+    <a href="/a.html"><img src="https://img.icons8.com/ios7/600/FFFFFF/apple-app-store--v2.png"><span>apps</span></a>
+    <a href="/e.html"><img src="https://img.icons8.com/ios_filled/512/FFFFFF/lock.png"><span>exploits</span></a>
+    <a href="/m.html"><img src="https://files.catbox.moe/9p8f37.png"><span>movies</span></a>
+    <a href="/s.html"><img src="https://img.icons8.com/m_rounded/512/FFFFFF/settings.png"><span>settings</span></a>
+    <a href="/contact.html"><img src="https://img.icons8.com/ios_filled/512/FFFFFF/apple-phone.png"><span>contact</span></a>
+    <a href="/windows.html"><img src="https://img.icons8.com/ios_filled/512/FFFFFF/windows-10.png"><span>windows</span></a>
+    <a href="/mobile.html"><img src="https://files.catbox.moe/pqnwdx.png"><span>mobile</span></a>
+    <a href="/partners.html"><img src="https://files.catbox.moe/jz7yq9.png"><span>partners</span></a>
   </div>
   <div class="bottom-section">
     <div class="quick-buttons">
@@ -879,6 +879,7 @@ body {
     </div>
   </div>
 </div>
+
                                                                                                                                                                 
     <div class="header">
         <input type="text" class="search-bar" placeholder="search..." onkeydown="handleSearch(event)">
