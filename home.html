@@ -687,7 +687,7 @@ body {
   background: linear-gradient(-45deg, #5a00cc, #4b00ff, #7700ff, #5a00cc);
   background-size: 600% 600%;
   animation: gradientBG 10s ease infinite;
-  transition: width 0.3s ease;
+  transition: width 0.4s ease;
   overflow: hidden;
   z-index: 999;
   display: flex;
@@ -715,7 +715,9 @@ body {
   text-decoration: none;
   font-family: 'Fredoka', sans-serif;
   font-size: 16px;
-  transition: background 0.2s, transform 0.2s;
+  font-weight: 700;
+  transition: background 0.2s, transform 0.2s ease, box-shadow 0.2s;
+  border-radius: 8px;
 }
 
 .sidebar .nav-links a img {
@@ -736,9 +738,9 @@ body {
 }
 
 .sidebar .nav-links a:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
   transform: scale(1.05);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
 }
 
 .bottom-section {
@@ -752,6 +754,14 @@ body {
   display: flex;
   gap: 6px;
   margin-bottom: 12px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.sidebar:hover .quick-buttons {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .quick-buttons button {
@@ -762,12 +772,15 @@ body {
   background-color: white;
   color: #5a00cc;
   font-weight: bold;
+  font-family: 'Fredoka', sans-serif;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .quick-buttons button:hover {
-  background-color: #ddd;
+  background-color: #eeeeee;
+  transform: scale(1.1);
 }
 
 .logo-box {
@@ -775,26 +788,30 @@ body {
   align-items: center;
   gap: 10px;
   padding: 0 10px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.sidebar:hover .logo-box {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .logo-box img {
   width: 32px;
   height: 32px;
   border-radius: 5px;
+  box-shadow: 0 0 4px rgba(255,255,255,0.2);
 }
 
 .logo-box span {
   font-size: 14px;
   color: white;
   font-weight: bold;
-  opacity: 0;
-  transition: opacity 0.3s ease;
   font-family: 'Fredoka', sans-serif;
 }
 
-.sidebar:hover .logo-box span {
-  opacity: 1;
-}
 
 </style>
 
@@ -819,13 +836,7 @@ body {
         }
     }
 </script>
-
-
-
-        .function openSupportPage() {
-            window.open('https://docs.google.com/forms/d/e/1FAIpQLScAjuO9s-lwojOfEMwf-_jtQOjWCzkrkz4NKGPCIpbED3k2rA/viewform', '_blank');
-        }
-        
+    
     </script>
 </head>
 <body>
