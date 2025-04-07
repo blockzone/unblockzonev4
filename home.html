@@ -208,34 +208,47 @@ body {
     text-shadow: 0 0 15px white, 0 0 25px purple, 0 0 35px purple;
 }
 
-        .header {
-            position: absolute;
-            top: 70%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80%;
-            height: 60px;
-            background: black;
-            border: 2px solid white;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            padding: 0 15px;
-        }
+.header {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 60px;
+    background: black;
+    border: 2px solid white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    overflow: hidden;
+}
 
-        .search-bar {
-            width: 100%;
-            background: transparent;
-            border: none;
-            outline: none;
-            color: white;
-            font-size: 18px;
-        }
-        
-        .header.active {
-            transform: translateX(-50%) translateY(0);
-            opacity: 1;
-        }
+.search-bar {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 18px;
+    padding-left: 20px; /* Adjust padding to allow space for the splash text */
+    position: relative;
+}
+
+.splash-text {
+    position: absolute;
+    left: -100%;
+    color: white;
+    font-size: 18px;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+    white-space: nowrap;
+}
+
+.header.active .splash-text {
+    left: 20px;
+    opacity: 1;
+}
 
         /* Base styles */
 body {
@@ -708,9 +721,9 @@ body {
         <a href="/s.html" class="icon-container"><img class="icon" src="https://img.icons8.com/m_rounded/512/FFFFFF/settings.png"><div class="icon-label">settings</div></a>
     </div>
                                                                                                                                                                 
-    <div class="header">
-        <input type="text" class="search-bar" placeholder="search..." onkeydown="handleSearch(event)">
-    </div>
+<div class="header">
+    <input type="text" class="search-bar" id="search-bar" placeholder="search..." onkeydown="handleSearch(event)">
+</div>
 
         <!-- Popup -->
     <div class="popup" id="popup">
@@ -935,6 +948,49 @@ body {
             });
         };
     </script>
+
+         <script>
+
+     const splashTexts = [
+    "Welcome to our site!",
+    "Find your next game!",
+    "Discover new worlds!",
+    "Explore endless fun!",
+    "Unblock your gaming potential!",
+    "Search for adventure!",
+    "Enter the game zone!",
+    "Unblock and play!",
+    "Time to play!",
+    "Gaming just got better!",
+    "Adventure awaits!",
+    "Unlock the fun!",
+    "Play your way!",
+    "Gaming has no limits!",
+    "Start your journey!",
+    "Ready to play?",
+    "Join the game revolution!",
+    "Unblock the path!",
+    "Game on!",
+    "Find your next obsession!"
+];
+
+function getRandomSplashText() {
+    const randomIndex = Math.floor(Math.random() * splashTexts.length);
+    return splashTexts[randomIndex];
+}
+
+window.onload = function() {
+    const searchBar = document.getElementById("search-bar");
+    const splashText = document.createElement("div");
+    splashText.classList.add("splash-text");
+    splashText.textContent = getRandomSplashText();
+    searchBar.parentElement.appendChild(splashText);
+
+    setTimeout(() => {
+        splashText.classList.add("active");
+    }, 100); // Delay to ensure the splash text appears after the page is loaded
+};
+
     
     <script>
         setTimeout(function() {
