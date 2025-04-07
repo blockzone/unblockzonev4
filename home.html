@@ -678,140 +678,97 @@ body {
             color: #ddd;
         }
 
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 60px;
-  background: url('https://img.freepik.com/free-photo/artistic-blurry-colorful-wallpaper-background_58702-8520.jpg?semt=ais_hybrid') no-repeat center center/cover;
-  transition: width 0.4s ease;
-  overflow: hidden;
-  z-index: 999;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 10px 0;
-  backdrop-filter: blur(4px);
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
-}
+  .sidebar {
+    width: 80px;
+    background: url('https://img.freepik.com/free-photo/artistic-blurry-colorful-wallpaper-background_58702-8520.jpg?semt=ais_hybrid') no-repeat center center / cover;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: width 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 100;
+  }
 
-.sidebar:hover {
-  width: 230px;
-}
+  /* Sidebar expands when hovered */
+  .sidebar:hover {
+    width: 240px;
+  }
 
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
+  .nav-links a {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 16px;
+    color: white;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+    border-left: 3px solid transparent;
+    font-size: 20px;
+  }
 
-.sidebar .nav-links a {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 12px 16px;
-  color: white;
-  text-decoration: none;
-  font-family: 'Fredoka', sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  transition: background 0.2s, transform 0.2s ease, box-shadow 0.2s;
-  border-radius: 8px;
-}
+  .nav-links a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(4px);
+    transform: scale(1.02);
+  }
 
-.sidebar .nav-links a img {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
-  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.4));
-}
+  .nav-links a:hover img {
+    filter: brightness(1.1) drop-shadow(0 0 4px rgba(255, 255, 255, 0.3));
+  }
 
-.sidebar .nav-links a span {
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  white-space: nowrap;
-}
+  .nav-links a img {
+    width: 28px;
+    height: 28px;
+    transition: filter 0.2s ease;
+  }
 
-.sidebar:hover .nav-links a span {
-  opacity: 1;
-}
+  .nav-links a span {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
 
-.sidebar .nav-links a:hover {
-  background: rgba(255, 255, 255, 0.1);
-  transform: scale(1.05);
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
-}
+  /* Show text when sidebar is expanded */
+  .sidebar:hover .nav-links a span {
+    opacity: 1;
+  }
 
-.bottom-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px 0;
-}
+  /* Active page styling */
+  .nav-links a.active {
+    background: rgba(255, 255, 255, 0.25);
+    border-left: 3px solid white;
+  }
 
-.quick-buttons {
-  display: flex;
-  gap: 6px;
-  margin-bottom: 12px;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
+  .nav-links a.active img,
+  .nav-links a.active span {
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.5));
+    color: white;
+  }
 
-.sidebar:hover .quick-buttons {
-  opacity: 1;
-  transform: translateY(0);
-}
+  .bottom-section {
+    padding: 20px 10px;
+  }
 
-.quick-buttons button {
-  width: 28px;
-  height: 28px;
-  border: none;
-  border-radius: 50%;
-  background-color: white;
-  color: #5a00cc;
-  font-weight: bold;
-  font-family: 'Fredoka', sans-serif;
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
+  .logo-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+    color: white;
+    font-weight: bold;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 22px;
+  }
 
-.quick-buttons button:hover {
-  background-color: #eeeeee;
-  transform: scale(1.1);
-}
-
-.logo-box {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 0 10px;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.sidebar:hover .logo-box {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.logo-box img {
-  width: 32px;
-  height: 32px;
-  border-radius: 5px;
-  box-shadow: 0 0 4px rgba(255,255,255,0.2);
-}
-
-.logo-box span {
-  font-size: 14px;
-  color: white;
-  font-weight: bold;
-  font-family: 'Fredoka', sans-serif;
-}
-
+  .logo-box img {
+    width: 40px;
+    height: 40px;
+  }
 
 </style>
 
@@ -855,31 +812,54 @@ body {
 
 <div class="sidebar">
   <div class="nav-links">
-    <a href="/index.html"><img src="https://img.icons8.com/m_sharp/200/FFFFFF/home.png"><span>home</span></a>
-    <a href="/g.html"><img src="https://files.catbox.moe/g7hy7r.png"><span>games</span></a>
-    <a href="/a.html"><img src="https://img.icons8.com/ios7/600/FFFFFF/apple-app-store--v2.png"><span>apps</span></a>
-    <a href="/e.html"><img src="https://img.icons8.com/ios_filled/512/FFFFFF/lock.png"><span>exploits</span></a>
-    <a href="/m.html"><img src="https://files.catbox.moe/9p8f37.png"><span>movies</span></a>
-    <a href="/s.html"><img src="https://img.icons8.com/m_rounded/512/FFFFFF/settings.png"><span>settings</span></a>
-    <a href="/contact.html"><img src="https://img.icons8.com/ios_filled/512/FFFFFF/apple-phone.png"><span>contact</span></a>
-    <a href="/windows.html"><img src="https://img.icons8.com/ios_filled/512/FFFFFF/windows-10.png"><span>windows</span></a>
-    <a href="/mobile.html"><img src="https://files.catbox.moe/pqnwdx.png"><span>mobile</span></a>
-    <a href="/partners.html"><img src="https://files.catbox.moe/jz7yq9.png"><span>partners</span></a>
+    <a href="/index.html" class="active">
+      <img src="https://img.icons8.com/m_sharp/200/FFFFFF/home.png">
+      <span>home</span>
+    </a>
+    <a href="/g.html">
+      <img src="https://files.catbox.moe/g7hy7r.png">
+      <span>games</span>
+    </a>
+    <a href="/a.html">
+      <img src="https://img.icons8.com/ios7/600/FFFFFF/apple-app-store--v2.png">
+      <span>apps</span>
+    </a>
+    <a href="/e.html">
+      <img src="https://img.icons8.com/ios_filled/512/FFFFFF/lock.png">
+      <span>exploits</span>
+    </a>
+    <a href="/m.html">
+      <img src="https://files.catbox.moe/9p8f37.png">
+      <span>movies</span>
+    </a>
+    <a href="/s.html">
+      <img src="https://img.icons8.com/m_rounded/512/FFFFFF/settings.png">
+      <span>settings</span>
+    </a>
+    <a href="/contact.html">
+      <img src="https://img.icons8.com/ios_filled/512/FFFFFF/apple-phone.png">
+      <span>contact</span>
+    </a>
+    <a href="/windows.html">
+      <img src="https://img.icons8.com/ios_filled/512/FFFFFF/windows-10.png">
+      <span>windows</span>
+    </a>
+    <a href="/mobile.html">
+      <img src="https://files.catbox.moe/pqnwdx.png">
+      <span>mobile</span>
+    </a>
+    <a href="/partners.html">
+      <img src="https://files.catbox.moe/jz7yq9.png">
+      <span>partners</span>
+    </a>
   </div>
   <div class="bottom-section">
-    <div class="quick-buttons">
-      <button>1</button>
-      <button>2</button>
-      <button>3</button>
-      <button>4</button>
-    </div>
     <div class="logo-box">
       <img src="https://files.catbox.moe/ao6qv3.png" alt="Logo">
       <span>unblockzone v4</span>
     </div>
   </div>
 </div>
-
                                                                                                                                                                 
     <div class="header">
         <input type="text" class="search-bar" placeholder="search..." onkeydown="handleSearch(event)">
