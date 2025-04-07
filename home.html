@@ -186,37 +186,29 @@ body {
             to { opacity: 1; }
         }
 
-        .title {
-            position: absolute;
-            top: 25%;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 48px;
-            font-weight: bold;
-            font-family: Arial, sans-serif;
-            text-transform: lowercase;
-            color: white;
-            text-align: center;
-            transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
-            text-shadow: 0 0 10px white, 0 0 20px purple, 0 0 30px purple;
-            white-space: nowrap;
-            overflow: hidden;
-            border-right: 3px solid white;
-        }
-        .title:hover {
-            transform: translateX(-50%) scale(1.2);
-            text-shadow: 0 0 15px white, 0 0 25px purple, 0 0 35px purple;
-        }
-        .typing::after {
-            content: '|';
-            display: inline-block;
-            animation: blink 0.7s steps(2, start) infinite;
-        }
-        @keyframes blink {
-            0% { opacity: 1; }
-            50% { opacity: 0; }
-            100% { opacity: 1; }
-        }
+.title {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 48px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    text-transform: lowercase;
+    color: white;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+    text-shadow: 0 0 10px white, 0 0 20px purple, 0 0 30px purple;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid white;
+}
+
+/* Removed the typing animation */
+.title:hover {
+    transform: translateX(-50%) scale(1.2);
+    text-shadow: 0 0 15px white, 0 0 25px purple, 0 0 35px purple;
+}
 
         .header {
             position: absolute;
@@ -708,7 +700,7 @@ body {
     <div id="particles-js"></div>
     <div class="coolBlobIdk"></div>
 
-    <div class="title"><span class="typing" id="typing"></span></div>
+<div class="title">unblockzone v4</div>
 
     <div class="icons-container">
         <a href="/g.html" class="icon-container"><img class="icon" src="https://static-00.iconduck.com/assets.00/console-controller-icon-2048x2048-pmmusn7m.png"><div class="icon-label">games</div></a>
